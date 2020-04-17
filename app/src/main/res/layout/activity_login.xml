@@ -66,5 +66,16 @@
         android:gravity="center"
         android:text="zarejestruj sie!" />
 
+    <ProgressBar
+        android:id="@+id/progressBar_logowanie"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rejestracja"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:visibility="invisible" />
+
 
 </RelativeLayout>

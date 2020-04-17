@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,18 +19,21 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button btnLogowanie;
+    Button btnLogowanie,btnRejestracja;
     EditText etEmail, etHaslo;
     FirebaseAuth mFirebaseAuth;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        btnRejestracja = findViewById(R.id.rejestracja);
         btnLogowanie = findViewById(R.id.logowanie);
         etEmail = findViewById(R.id.email);
         etHaslo = findViewById(R.id.haslo);
+        progressBar = findViewById(R.id.progressBar_logowanie);
         mFirebaseAuth = FirebaseAuth.getInstance();
 
 
@@ -45,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
+                        progressBar.setVisibility(View.VISIBLE);
+
                         if (task.isSuccessful()) {
 
                             Toast.makeText(LoginActivity.this, "Zalogowany! ", Toast.LENGTH_SHORT).show();
@@ -58,6 +64,14 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
+
+        btnRejestracja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RejestracjaActivity.class));
+            }
+        });
+
 
     }
 }
