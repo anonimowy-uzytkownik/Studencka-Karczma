@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "448653267428",
+    "firebase_url": "https://projekt-zpi-ad1f3.firebaseio.com",
+    "project_id": "projekt-zpi-ad1f3",
+    "storage_bucket": "projekt-zpi-ad1f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448653267428:android:c82bd849c78c6cf45977f1",
+        "android_client_info": {
+          "package_name": "com.example.projekt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "448653267428-iv83k8o5g0sboj5h4nlqokopqnh2lkhj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.projekt",
+            "certificate_hash": "5ea8ee7ab28b6981ca708b4701f8146ae8f18e8a"
+          }
+        },
+        {
+          "client_id": "448653267428-n28l9vg1ptcqrsnunereiegmi1itm33d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRv03XoXhWWti1o-oHyR7WsyD-vGVu_ZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "448653267428-n28l9vg1ptcqrsnunereiegmi1itm33d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#243665"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/haslo"
+        android:layout_centerInParent="true"
+
+        android:gravity="center"
+        android:hint="e-mail"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/haslo"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+
+        android:gravity="center"
+
+
+        android:hint="haslo"
+        android:inputType="text" />
+
+
+    <Button
+        android:id="@+id/logowanie"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/haslo"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="zaloguj sie!" />
+
+    <Button
+        android:id="@+id/logowanie_gosc"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/logowanie"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="wjedz jako gość" />
+
+
+
+</RelativeLayout>
