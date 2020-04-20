@@ -9,11 +9,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    TextView textViewOpis ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         //super komentarz
 
 
+    textViewOpis=findViewById(R.id.textView);
 
 
 
@@ -31,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-       /* DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Przepisy");
+       // DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("przepisy");
+        Query reference = FirebaseDatabase.getInstance().getReference().child("przepisy").child("2").child("składniki");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
                 textViewOpis.setText(databaseError.getMessage().toString());
             }
-        }); */
+        });
 
     }
 }
