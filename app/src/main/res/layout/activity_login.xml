@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#243665"
+    android:background="@drawable/Gotowe"
     tools:context=".MainActivity">
 
 
@@ -15,10 +15,11 @@
         android:layout_above="@+id/haslo"
         android:layout_centerInParent="true"
 
+        android:background="@drawable/edittext_test"
         android:gravity="center"
         android:hint="e-mail"
         android:inputType="text"
-        android:text="test@test.pl" />
+        android:textColor="#000000" />
 
     <EditText
         android:id="@+id/haslo"
@@ -26,13 +27,11 @@
         android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="15dp"
-
+        android:background="@drawable/edittext_test"
         android:gravity="center"
-
-
         android:hint="haslo"
         android:inputType="text"
-        android:text="test123" />
+        android:textColor="#050505" />
 
 
     <Button
@@ -42,9 +41,12 @@
         android:layout_below="@+id/haslo"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/guzik_test"
         android:gravity="center"
         android:text="zaloguj sie!"
-        />
+        android:textColor="#A6F1CC68"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/logowanie_gosc"
@@ -53,8 +55,12 @@
         android:layout_below="@id/logowanie"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/guzik_test"
         android:gravity="center"
-        android:text="wjedz jako gość" />
+        android:text="wejdz jako gość"
+        android:textColor="#A6F1CC68"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/rejestracja"
@@ -63,8 +69,12 @@
         android:layout_below="@id/logowanie_gosc"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/guzik_test"
         android:gravity="center"
-        android:text="zarejestruj sie!" />
+        android:text="zarejestruj sie!"
+        android:textColor="#A6F1CC68"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ProgressBar
         android:id="@+id/progressBar_logowanie"
