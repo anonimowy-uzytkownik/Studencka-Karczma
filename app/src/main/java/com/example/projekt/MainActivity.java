@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 textViewSkładniki.setText(databaseError.getMessage().toString()); }});
-
-
         opis.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
