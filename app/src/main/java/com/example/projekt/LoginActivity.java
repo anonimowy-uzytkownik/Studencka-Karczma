@@ -5,11 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,12 +34,29 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        TextView textView= findViewById(R.id.textView2);
+
         btnRejestracja = findViewById(R.id.rejestracja);
         btnLogowanie = findViewById(R.id.logowanie);
         etEmail = findViewById(R.id.email);
         etHaslo = findViewById(R.id.haslo);
         progressBar = findViewById(R.id.progressBar_logowanie);
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+        String text="Nie masz jeszcze konta? Zarejstruj się!";
+        SpannableString ss= new SpannableString(text);
+
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) {
+                startActivity(new Intent(LoginActivity.this, RejestracjaActivity.class));
+
+            }
+        };
+
+        ss.setSpan(clickableSpan,24,34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(ss);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
 
 
         btnLogowanie.setOnClickListener(new View.OnClickListener() {
