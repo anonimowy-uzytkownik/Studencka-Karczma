@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        ss.setSpan(clickableSpan,24,34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan,24,39, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -87,12 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnRejestracja.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, RejestracjaActivity.class));
-            }
-        });
+
 
 
     }
