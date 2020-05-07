@@ -62,16 +62,15 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <Button
+    <TextView
         android:id="@+id/rejestracja"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_below="@id/logowanie_gosc"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:background="@drawable/guzik_test"
         android:gravity="center"
-        android:text="zarejestruj sie!"
+        android:text="Nie masz jeszcze konta? Zarejestruj się!"
         android:textColor="#A6F1CC68"
         android:textSize="20sp"
         android:textStyle="bold" />
