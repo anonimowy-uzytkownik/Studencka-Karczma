@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#243665"
+    android:background="@drawable/gotowy2"
     tools:context=".MainActivity">
 
 
@@ -14,6 +14,7 @@
         android:layout_height="50dp"
         android:layout_above="@+id/haslo"
         android:layout_centerInParent="true"
+        android:background="@drawable/edittext_test"
         android:gravity="center"
         android:hint="e-mail"
         android:inputType="text" />
@@ -24,9 +25,10 @@
         android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_test"
+
+
         android:gravity="center"
-
-
         android:hint="haslo"
         android:inputType="text" />
 
@@ -38,8 +40,10 @@
         android:layout_below="@+id/haslo"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/guzik_test"
         android:gravity="center"
-        android:text="zarejestruj sie!" />
+        android:text="zarejestruj sie!"
+        android:textColor="#A6F1CC68" />
 
     <ProgressBar
         android:id="@+id/progressBar_rejestracja"
