@@ -1,8 +1,11 @@
 package com.example.projekt;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -11,6 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView textViewSkładniki, textViewOpis,textViewTytuł, textViewPrzygotowanie, textViewPorcja;
@@ -18,8 +23,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ListView mListView=(ListView) findViewById(R.id.listView1);
 
-    textViewSkładniki =findViewById(R.id.textViewSkładniki);
+        Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
+        Przepis buraki=new Przepis("jakiś obrazek","Kotlex","1,7","2.09.1960");
+        Przepis kotlet=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
+        Przepis kotlet1=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
+        ArrayList<Przepis> przepisList = new ArrayList<>();
+        przepisList.add(ziemniaki);
+        przepisList.add(buraki);
+        przepisList.add(kotlet);
+        przepisList.add(kotlet1);
+
+        PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);
+        mListView.setAdapter(adapter);
+
+
+   /* textViewSkładniki =findViewById(R.id.textViewSkładniki);
     textViewOpis = findViewById(R.id.textViewOpis);
     textViewTytuł = findViewById(R.id.textViewTytuł);
     textViewPrzygotowanie = findViewById(R.id.textViewPrzygotowanie);
@@ -61,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 textViewTytuł.setText(databaseError.getMessage().toString()); }});
-
+*/
         /* na razie wypisuje opis a nie porcję
         porcja.addValueEventListener(new ValueEventListener() {
             @Override
@@ -73,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
                 textViewPorcja.setText(databaseError.getMessage().toString()); }});
            */
-
+/*
         przygotowanie.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -83,6 +103,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 textViewPrzygotowanie.setText(databaseError.getMessage().toString()); }});
-
+*/
     }
 }
