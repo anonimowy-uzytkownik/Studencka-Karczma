@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    public final String [] tablica={"a","a","a","a"};
 
     TextView textViewSkładniki, textViewOpis,textViewTytuł, textViewPrzygotowanie, textViewPorcja;
     @Override
@@ -42,16 +43,17 @@ public class MainActivity extends AppCompatActivity {
         Query autor = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(5);
         Query ocena = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(2);
         Query data_dodania = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToFirst(4);
-       final String [] tablica={"a","a","a","a"};
+
 
 
 
         obrazek.addValueEventListener(new ValueEventListener() {
-            @Override
+           @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
-                    tablica[0]=snapshot.getValue().toString();
+                    tablica[0]=snapshot.getValue().toString()+"\n";
+
 
                 }
             }
