@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public final String [] tablica={"a","a","a","a"};
 
     TextView textViewSkładniki, textViewOpis,textViewTytuł, textViewPrzygotowanie, textViewPorcja;
+    String [] tablica={"a","a","a","a"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
