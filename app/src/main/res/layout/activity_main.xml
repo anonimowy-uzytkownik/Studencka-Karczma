@@ -8,9 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ScrollView>
+        android:layout_height="match_parent"/>
 
     <LinearLayout
         android:id="@+id/llinear1"
@@ -49,7 +47,7 @@
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="650dp"
+        android:layout_height="635dp"
         android:layout_below="@id/llinear1"
         android:background="@drawable/gotowe" >
 
@@ -63,32 +61,32 @@
 
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/buttonPrzepisy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Przepisy" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/buttonUlubione"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Ulubione" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/buttonKonto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Konto" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/buttonKupony"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Kupony" />
     </LinearLayout>
 
 

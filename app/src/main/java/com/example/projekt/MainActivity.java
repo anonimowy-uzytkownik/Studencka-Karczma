@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,12 +24,16 @@ public class MainActivity extends AppCompatActivity {
     public final String [] tablica={"a","a","a","a"};
 
     TextView textViewSkładniki, textViewOpis,textViewTytuł, textViewPrzygotowanie, textViewPorcja;
-    String [] tablica={"a","a","a","a"};
+    Button buttonUlubione,buttonKonto,buttonKupony;
+    //String[] tablica={"a","a","a","a"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView mListView=(ListView) findViewById(R.id.listView1);
+        buttonUlubione=findViewById(R.id.buttonUlubione);
+        buttonKonto=findViewById(R.id.buttonKonto);
+        buttonKupony=findViewById(R.id.buttonKupony);
 
         Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
         Przepis buraki=new Przepis("jakiś obrazek","Kotlex","1,7","2.09.1960");
@@ -37,6 +44,35 @@ public class MainActivity extends AppCompatActivity {
         przepisList.add(buraki);
         przepisList.add(kotlet);
         przepisList.add(kotlet1);
+
+        buttonUlubione.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Ulubione.class));
+            }
+        });
+        buttonKonto.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Konto.class));
+            }
+        });
+        buttonKupony.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Kupony.class));
+            }
+        });
+
+
+
+
 
        // test
         Query obrazek = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(3);
@@ -137,5 +173,8 @@ public class MainActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
                 textViewPrzygotowanie.setText(databaseError.getMessage().toString()); }});
 */
+
+
     }
+
 }
