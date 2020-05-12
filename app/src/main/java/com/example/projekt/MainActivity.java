@@ -1,5 +1,6 @@
 package com.example.projekt;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,6 +35,35 @@ public class MainActivity extends AppCompatActivity {
         przepisList.add(buraki);
         przepisList.add(kotlet);
         przepisList.add(kotlet1);
+
+       // test
+        Query obrazek = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(3);
+
+        Query autor = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(5);
+        Query ocena = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(2);
+        Query data_dodania = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToFirst(4);
+       final String [] tablica={"a","a","a","a"};
+
+
+
+        obrazek.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren())
+                {
+                    tablica[0]=snapshot.getValue().toString();
+
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                textViewTytuł.setText(databaseError.getMessage().toString()); }});
+
+
+
+        Przepis czarnina = new Przepis(tablica[0],tablica[1],tablica[2],tablica[3]);
+        przepisList.add(czarnina);
+       // test
 
         PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);
         mListView.setAdapter(adapter);
