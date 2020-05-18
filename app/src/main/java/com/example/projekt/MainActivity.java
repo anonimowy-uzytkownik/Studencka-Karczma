@@ -35,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
         buttonKonto=findViewById(R.id.buttonKonto);
         buttonKupony=findViewById(R.id.buttonKupony);
 
-        Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
-        Przepis buraki=new Przepis("jakiś obrazek","Kotlex","1,7","2.09.1960");
-        Przepis kotlet=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
-        Przepis kotlet1=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
-        ArrayList<Przepis> przepisList = new ArrayList<>();
-        przepisList.add(ziemniaki);
-        przepisList.add(buraki);
-        przepisList.add(kotlet);
-        przepisList.add(kotlet1);
+       // Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
+       // Przepis buraki=new Przepis("jakiś obrazek","Kotlex","1,7","2.09.1960");
+       // Przepis kotlet=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
+      //  Przepis kotlet1=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
+        final ArrayList<Przepis> przepisList = new ArrayList<>();
+       // przepisList.add(ziemniaki);
+      //  przepisList.add(buraki);
+      //  przepisList.add(kotlet);
+      //  przepisList.add(kotlet1);
 
         buttonUlubione.setOnClickListener(new View.OnClickListener() {
 
@@ -71,11 +71,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
+        final PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);
+        mListView.setAdapter(adapter);
 
 
        // test
-        Query obrazek = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(3);
+        Query obrazek = FirebaseDatabase.getInstance().getReference().child("przepisy");
 
         Query autor = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(5);
         Query ocena = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(2);
@@ -84,14 +85,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        obrazek.addValueEventListener(new ValueEventListener() {
+        obrazek.addListenerForSingleValueEvent(new ValueEventListener() {
            @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
-                    tablica[0]=snapshot.getValue().toString()+"\n";
+           przepisList.clear();
 
+                    Przepis a = new Przepis(dataSnapshot.child("3").child("obrazek").getValue().toString(), dataSnapshot.child("3").child("autor").getValue().toString()
+                            , dataSnapshot.child("3").child("ocena").getValue().toString(), dataSnapshot.child("3").child("data dodania").getValue().toString());
+                    przepisList.add(a);
 
+                    Przepis b = new Przepis(dataSnapshot.child("4").child("obrazek").getValue().toString(),dataSnapshot.child("4").child("autor").getValue().toString()
+                            ,dataSnapshot.child("4").child("ocena").getValue().toString(),dataSnapshot.child("4").child("data dodania").getValue().toString());
+                    przepisList.add(b);
+
+                    adapter.notifyDataSetChanged();
                 }
             }
             @Override
@@ -100,12 +109,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Przepis czarnina = new Przepis(tablica[0],tablica[1],tablica[2],tablica[3]);
-        przepisList.add(czarnina);
+       // Przepis czarnina = new Przepis(tablica[0],tablica[1],tablica[2],tablica[3]);
+       // przepisList.add(czarnina);
        // test
 
-        PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);
-        mListView.setAdapter(adapter);
+
 
 
    /* textViewSkładniki =findViewById(R.id.textViewSkładniki);
