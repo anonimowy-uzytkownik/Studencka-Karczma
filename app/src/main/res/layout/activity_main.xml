@@ -17,6 +17,7 @@
             android:layout_height="50dp"
             android:orientation="horizontal"
 
+
             >
 
             <Button
@@ -57,12 +58,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#000000">
 
 
             <Button
                 android:id="@+id/buttonPrzepisy"
-                android:background="@drawable/guzik_test"
+                android:background="@drawable/guzik_test2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -70,7 +72,7 @@
 
             <Button
                 android:id="@+id/buttonUlubione"
-                android:background="@drawable/guzik_test"
+                android:background="@drawable/guzik_test2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -78,7 +80,7 @@
 
             <Button
                 android:id="@+id/buttonKonto"
-                android:background="@drawable/guzik_test"
+                android:background="@drawable/guzik_test2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -86,11 +88,12 @@
 
             <Button
                 android:id="@+id/buttonKupony"
-                android:background="@drawable/guzik_test"
+                android:background="@drawable/guzik_test2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Kupony" />
+                android:text="Kupony"
+                />
         </LinearLayout>
     </LinearLayout>
 
