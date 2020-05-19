@@ -79,8 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ulubione"
-                android:background="@drawable/guzik_test2"/>
+                android:background="@drawable/edittext_test"
+                android:text="Ulubione" />
 
             <Button
                 android:id="@+id/buttonKonto"
