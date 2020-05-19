@@ -43,7 +43,7 @@
                 android:text="Button" />
 
 
-        </LinearLayout>s
+        </LinearLayout>
 
         <ListView
             android:id="@+id/listView1"
@@ -62,6 +62,7 @@
 
             <Button
                 android:id="@+id/buttonPrzepisy"
+                android:background="@drawable/guzik_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -69,6 +70,7 @@
 
             <Button
                 android:id="@+id/buttonUlubione"
+                android:background="@drawable/guzik_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -76,6 +78,7 @@
 
             <Button
                 android:id="@+id/buttonKonto"
+                android:background="@drawable/guzik_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -83,6 +86,7 @@
 
             <Button
                 android:id="@+id/buttonKupony"
+                android:background="@drawable/guzik_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
