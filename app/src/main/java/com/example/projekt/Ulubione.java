@@ -17,7 +17,7 @@ public class Ulubione extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ulubione);
-        ListView mListView=(ListView) findViewById(R.id.listView2);
+        ListView mListView=(ListView) findViewById(R.id.listView3);
         buttonPrzepisy=findViewById(R.id.buttonPrzepisy);
         buttonKonto=findViewById(R.id.buttonKonto);
         buttonKupony=findViewById(R.id.buttonKupony);
