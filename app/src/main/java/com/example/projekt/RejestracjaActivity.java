@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RejestracjaActivity extends AppCompatActivity {
 
-    EditText etEmail, etHaslo;
+    EditText etEmail, etHaslo,etHaslo_powtorz;
     Button btnRejestracja;
     FirebaseAuth mFirebaseAuth;
     ProgressBar progressBar;
@@ -33,6 +33,7 @@ public class RejestracjaActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         etEmail = findViewById(R.id.email);
         etHaslo = findViewById(R.id.haslo);
+        etHaslo_powtorz = findViewById(R.id.haslo_powtorz);
         progressBar = findViewById(R.id.progressBar_rejestracja);
         btnRejestracja = findViewById(R.id.rejestracja);
 
@@ -41,6 +42,7 @@ public class RejestracjaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = etEmail.getText().toString().trim();
                 String haslo = etHaslo.getText().toString().trim();
+                String haslo_powtorz = etHaslo_powtorz.getText().toString().trim();
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -50,9 +52,15 @@ public class RejestracjaActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(haslo)) {
                     etHaslo.setError("Hasło jest wymagane");
                     return;
+                } if (TextUtils.isEmpty(haslo_powtorz)) {
+                    etHaslo.setError("Hasło jest wymagane");
+                    return;
                 }
                 if (etHaslo.length() < 6) {
-                    etHaslo.setError("hasło musi być dłuższe niż 6 znaków!");
+                    etHaslo_powtorz.setError("hasło musi być dłuższe niż 6 znaków!");
+                    return;
+                }if (!haslo.equals(haslo_powtorz)) {
+                    etHaslo_powtorz.setError("Hasła muszą być identyczne!");
                     return;
                 }
 
