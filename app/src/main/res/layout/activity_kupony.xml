@@ -57,7 +57,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#000000">
 
 
             <Button
@@ -65,28 +66,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Przepisy" />
+                android:text="Przepisy"
+                android:background="@drawable/guzik_test2"/>
 
             <Button
                 android:id="@+id/buttonUlubione"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ulubione" />
+                android:text="Ulubione"
+                android:background="@drawable/guzik_test2"/>
 
             <Button
                 android:id="@+id/buttonKonto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Konto" />
+                android:text="Konto"
+                android:background="@drawable/guzik_test2"/>
 
             <Button
                 android:id="@+id/buttonKupony"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Kupony" />
+                android:text="Kupony"
+                android:background="@drawable/guzik_test2"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
