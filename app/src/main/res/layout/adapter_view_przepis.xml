@@ -15,7 +15,8 @@
         android:gravity="center"
         android:text="Obrazek"
         android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:background="@drawable/guzik_test"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -30,7 +31,8 @@
             android:layout_height="70dp"
             android:gravity="center"
             android:text="Autor"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:background="@drawable/guzik_test"/>/>
 
         <TextView
             android:id="@+id/textView3"
@@ -38,7 +40,8 @@
             android:layout_height="70dp"
             android:gravity="center"
             android:text="Ocena"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:background="@drawable/guzik_test"/>/>
 
         <TextView
             android:id="@+id/textView4"
@@ -46,7 +49,8 @@
             android:layout_height="70dp"
             android:gravity="center"
             android:text="Data dodania"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:background="@drawable/guzik_test"/>/>
 
 
     </LinearLayout>

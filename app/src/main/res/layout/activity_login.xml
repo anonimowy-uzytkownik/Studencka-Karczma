@@ -19,7 +19,7 @@
         android:gravity="center"
         android:hint="e-mail"
         android:inputType="text"
-        android:text="test123@test.pl"
+        android:text="t8xfi@wimsg.com"
         android:textColor="#000000" />
 
     <EditText
