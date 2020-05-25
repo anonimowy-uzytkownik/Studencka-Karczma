@@ -53,7 +53,8 @@
         android:background="@drawable/guzik_test"
         android:gravity="center"
         android:text="zarejestruj sie!"
-        android:textColor="#A6F1CC68" />
+        android:textColor="#A6F1CC68"
+        />
 
     <ProgressBar
         android:id="@+id/progressBar_rejestracja"

@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button btnLogowanie,btnRejestracja;
+    Button btnLogowanie, btnRejestracja;
     EditText etEmail, etHaslo;
     FirebaseAuth mFirebaseAuth;
     ProgressBar progressBar;
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        TextView textView= findViewById(R.id.textView2);
+        TextView textView = findViewById(R.id.textView2);
 
         btnRejestracja = findViewById(R.id.rejestracja);
         btnLogowanie = findViewById(R.id.logowanie);
@@ -43,8 +43,8 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar_logowanie);
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        String text="Nie masz jeszcze konta? Zarejstruj się!";
-        SpannableString ss= new SpannableString(text);
+        String text = "Nie masz jeszcze konta? Zarejstruj się!";
+        SpannableString ss = new SpannableString(text);
 
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        ss.setSpan(clickableSpan,24,39, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan, 24, 39, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -75,8 +75,16 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
 
+                            if (mFirebaseAuth.getCurrentUser().isEmailVerified() == false) {
+                                Toast.makeText(LoginActivity.this, "musisz potwierdzic adres email! ", Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.INVISIBLE);
+                                return;
+                            }
+
                             Toast.makeText(LoginActivity.this, "Zalogowany! ", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
 
                         } else {
                             Toast.makeText(LoginActivity.this, "Błąd! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -86,8 +94,6 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
-
-
 
 
     }
