@@ -48,7 +48,8 @@
                 android:layout_gravity="left"
                 android:layout_weight="80"
                 android:background="@drawable/guzik_test2"
-                android:text="wycisz" />
+                android:text="wycisz"
+                android:onClick="playIT"/>
 
             <Button
                 android:id="@+id/button3"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,18 +25,30 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     public final String [] tablica={"a","a","a","a"};
 
+
+
+
     TextView textViewSkładniki, textViewOpis,textViewTytuł, textViewPrzygotowanie, textViewPorcja;
     Button buttonUlubione,buttonKonto,buttonKupony,buttonCzyszczenie;
     //String[] tablica={"a","a","a","a"};
+
+    MediaPlayer mySong;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mySong=MediaPlayer.create(MainActivity.this,R.raw.maintheme);
+        mySong.start();
+        mySong.setLooping(true);
+
         ListView mListView=(ListView) findViewById(R.id.listView1);
         buttonUlubione=findViewById(R.id.buttonUlubione);
         buttonKonto=findViewById(R.id.buttonKonto);
         buttonKupony=findViewById(R.id.buttonKupony);
         buttonCzyszczenie=findViewById(R.id.button);
+
+
 
 
         Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
@@ -72,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Kupony.class));
             }
         });
+
+
 
 
         final PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);
@@ -135,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 textViewTytuł.setText(databaseError.getMessage().toString()); }});
+
+
 
 
 
@@ -209,9 +226,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 textViewPrzygotowanie.setText(databaseError.getMessage().toString()); }});
+
+
 */
 
 
     }
 
+
+    public void playIT(View view) {
+        if(mySong.isPlaying()){
+            mySong.pause();
+        }
+        else
+        {
+            mySong.start();
+        }
+
+
+    }
 }
