@@ -32,7 +32,8 @@
             android:gravity="center"
             android:text="Autor"
             android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"/>/>
+            android:background="@drawable/guzik_test"
+            />
 
         <TextView
             android:id="@+id/textView3"
