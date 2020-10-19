@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public final String [] tablica={"a","a","a","a"};
 
     TextView textViewSkładniki, textViewOpis,textViewTytuł, textViewPrzygotowanie, textViewPorcja;
-    Button buttonUlubione,buttonKonto,buttonKupony;
+    Button buttonUlubione,buttonKonto,buttonKupony,buttonCzyszczenie;
     //String[] tablica={"a","a","a","a"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,18 @@ public class MainActivity extends AppCompatActivity {
         buttonUlubione=findViewById(R.id.buttonUlubione);
         buttonKonto=findViewById(R.id.buttonKonto);
         buttonKupony=findViewById(R.id.buttonKupony);
+        buttonCzyszczenie=findViewById(R.id.button);
 
-       // Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
-       // Przepis buraki=new Przepis("jakiś obrazek","Kotlex","1,7","2.09.1960");
-       // Przepis kotlet=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
-      //  Przepis kotlet1=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
+
+        Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
+        Przepis buraki=new Przepis("jakiś obrazek","Kotlex","1,7","2.09.1960");
+        Przepis kotlet=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
+        Przepis kotlet1=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
         final ArrayList<Przepis> przepisList = new ArrayList<>();
-       // przepisList.add(ziemniaki);
-      //  przepisList.add(buraki);
-      //  przepisList.add(kotlet);
-      //  przepisList.add(kotlet1);
+
+        przepisList.add(buraki);
+        przepisList.add(kotlet);
+        przepisList.add(kotlet1);
 
         buttonUlubione.setOnClickListener(new View.OnClickListener() {
 
@@ -76,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 
        // test
-        Query obrazek = FirebaseDatabase.getInstance().getReference().child("przepisy");
+        Query obrazek = FirebaseDatabase.getInstance().getReference().child("Przepisy").child("Przepis1");
 
         Query autor = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(5);
         Query ocena = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(2);
@@ -90,15 +93,41 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
+                    Log.i("dasda", "String");
            przepisList.clear();
 
-                    Przepis a = new Przepis(dataSnapshot.child("3").child("obrazek").getValue().toString(), dataSnapshot.child("3").child("autor").getValue().toString()
-                            , dataSnapshot.child("3").child("ocena").getValue().toString(), dataSnapshot.child("3").child("data dodania").getValue().toString());
-                    przepisList.add(a);
+  //                  Przepis a = new Przepis(dataSnapshot.child("3").child("obrazek").getValue().toString(), dataSnapshot.child("3").child("autor").getValue().toString()
+   //                         , dataSnapshot.child("3").child("ocena").getValue().toString(), dataSnapshot.child("3").child("data dodania").getValue().toString());
+   //                 przepisList.add(a);
 
+                    Przepis a = new Przepis(dataSnapshot.child("Autor").getValue().toString(), dataSnapshot.child("Ocena").getValue().toString()
+                            , dataSnapshot.child("NazwaPrzepisu").getValue().toString(), dataSnapshot.child("data dodania").getValue().toString());
+                    przepisList.add(a);
+                    Przepis b = new Przepis(dataSnapshot.child("Autor").getValue().toString(), dataSnapshot.child("Ocena").getValue().toString()
+                            , dataSnapshot.child("NazwaPrzepisu").getValue().toString(), dataSnapshot.child("data dodania").getValue().toString());
+                    przepisList.add(b);
+                    Przepis c = new Przepis(dataSnapshot.child("Autor").getValue().toString(), dataSnapshot.child("Ocena").getValue().toString()
+                            , dataSnapshot.child("NazwaPrzepisu").getValue().toString(), dataSnapshot.child("data dodania").getValue().toString());
+                    przepisList.add(c);
+                    Przepis d = new Przepis(dataSnapshot.child("Autor").getValue().toString(), dataSnapshot.child("Ocena").getValue().toString()
+                            , dataSnapshot.child("NazwaPrzepisu").getValue().toString(), dataSnapshot.child("data dodania").getValue().toString());
+                    przepisList.add(d);
+                    Przepis e = new Przepis(dataSnapshot.child("Autor").getValue().toString(), dataSnapshot.child("Ocena").getValue().toString()
+                            , dataSnapshot.child("NazwaPrzepisu").getValue().toString(), dataSnapshot.child("data dodania").getValue().toString());
+                    przepisList.add(e);               
+                    Przepis f = new Przepis(dataSnapshot.child("Autor").getValue().toString(), dataSnapshot.child("Ocena").getValue().toString()
+                            , dataSnapshot.child("NazwaPrzepisu").getValue().toString(), dataSnapshot.child("data dodania").getValue().toString());
+                    przepisList.add(f);
+                    Przepis g = new Przepis(dataSnapshot.child("Autor").getValue().toString(), dataSnapshot.child("Ocena").getValue().toString()
+                            , dataSnapshot.child("NazwaPrzepisu").getValue().toString(), dataSnapshot.child("data dodania").getValue().toString());
+                    przepisList.add(g);
+
+/*
                     Przepis b = new Przepis(dataSnapshot.child("4").child("obrazek").getValue().toString(),dataSnapshot.child("4").child("autor").getValue().toString()
                             ,dataSnapshot.child("4").child("ocena").getValue().toString(),dataSnapshot.child("4").child("data dodania").getValue().toString());
                     przepisList.add(b);
+ */
+
 
                     adapter.notifyDataSetChanged();
                 }
