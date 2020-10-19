@@ -30,7 +30,7 @@
                 android:background="@drawable/guzik_test2"/>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonPlayer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
