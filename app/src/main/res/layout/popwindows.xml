@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/autor"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/dataDodania"
+        android:layout_centerInParent="true"
+
+        android:background="@drawable/edittext_test"
+        android:gravity="center"
+        android:hint="autor"
+        android:inputType="text"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/dataDodania"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/obrazek"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_test"
+        android:gravity="center"
+        android:hint="dataDodania"
+        android:inputType="text"
+        android:textColor="#050505" />
+
+    <EditText
+        android:id="@+id/obrazek"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/ocena"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_test"
+        android:gravity="center"
+        android:hint="obrazek"
+        android:inputType="text"
+        android:textColor="#050505" />
+
+    <EditText
+        android:id="@+id/ocena"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/dodawanie"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_test"
+        android:gravity="center"
+        android:hint="ocena"
+        android:inputType="text"
+        android:textColor="#050505" />
+
+
+    <Button
+        android:id="@+id/dodawanie"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/haslo"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/guzik_test"
+        android:gravity="center"
+        android:text="dodaj przepis"
+        android:textColor="#A6F1CC68"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:onClick="DodaniePrzepisu"/>
+
+
+
+</RelativeLayout>
