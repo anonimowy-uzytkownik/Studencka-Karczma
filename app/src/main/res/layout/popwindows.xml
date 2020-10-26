@@ -3,63 +3,64 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/autor"
+        android:id="@+id/nazwa"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/dataDodania"
+        android:layout_above="@+id/skladniki"
         android:layout_centerInParent="true"
-
         android:background="@drawable/edittext_test"
         android:gravity="center"
-        android:hint="autor"
+        android:hint="nazwa dania"
         android:inputType="text"
         android:textColor="#000000" />
 
     <EditText
-        android:id="@+id/dataDodania"
+        android:id="@+id/skladniki"
         android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/obrazek"
+        android:layout_height="100dp"
+        android:layout_above="@+id/sposobPrzygotowania"
         android:layout_centerInParent="true"
         android:layout_marginTop="15dp"
         android:background="@drawable/edittext_test"
         android:gravity="center"
-        android:hint="dataDodania"
+        android:hint="skladniki"
         android:inputType="text"
         android:textColor="#050505" />
 
     <EditText
-        android:id="@+id/obrazek"
+        android:id="@+id/sposobPrzygotowania"
         android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/ocena"
+        android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="15dp"
         android:background="@drawable/edittext_test"
         android:gravity="center"
-        android:hint="obrazek"
+        android:hint="sposobPrzygotowania"
         android:inputType="text"
         android:textColor="#050505" />
 
-    <EditText
-        android:id="@+id/ocena"
-        android:layout_width="300dp"
+
+    <Button
+        android:id="@+id/zdjecie"
+        android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/dodawanie"
+        android:layout_below="@+id/sposobPrzygotowania"
         android:layout_centerInParent="true"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext_test"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/guzik_test"
         android:gravity="center"
-        android:hint="ocena"
-        android:inputType="text"
-        android:textColor="#050505" />
+        android:text="wybierz zdjecie"
+        android:textColor="#A6F1CC68"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:onClick="DodanieZdjecia"/>
 
 
     <Button
         android:id="@+id/dodawanie"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/haslo"
+        android:layout_below="@+id/zdjecie"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/guzik_test"

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,21 +46,28 @@ public class MainActivity extends AppCompatActivity {
         buttonCzyszczenie=findViewById(R.id.button);
         buttonDodaniePrzepisu=findViewById(R.id.buttonDodaniePrzepisu);
 
-        mySong= MediaPlayer.create(MainActivity.this,R.raw.maintheme);
-        mySong.start();
-        mySong.setLooping(true);
 
 
-        Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
+            mySong= MediaPlayer.create(MainActivity.this,R.raw.maintheme);
+
+            mySong.start();
+            mySong.setLooping(true);
+
+
+
+
+
+      /*  Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
         Przepis buraki=new Przepis("jakiś obrazek","Kotlex","1,7","2.09.1960");
         Przepis kotlet=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
         Przepis kotlet1=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
-        final ArrayList<Przepis> przepisList = new ArrayList<>();
+
 
         przepisList.add(buraki);
         przepisList.add(kotlet);
-        przepisList.add(kotlet1);
+        przepisList.add(kotlet1); */
 
+        final ArrayList<Przepis> przepisList = new ArrayList<>();
         buttonUlubione.setOnClickListener(new View.OnClickListener() {
 
 
@@ -102,12 +113,13 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
-                    Log.i("dasda", "String");
+
                     
                     String autor = String.valueOf(snapshot.child("autor").getValue());
                     String dataDodania = String.valueOf(snapshot.child("dataDodania").getValue());
-                    String obrazek = String.valueOf(snapshot.child("obrazek").getValue());
                     String ocena = String.valueOf(snapshot.child("ocena").getValue());
+                    String obrazek = String.valueOf(snapshot.child("obrazek").getValue());
+
 
                     Przepis a = new Przepis(obrazek,autor,ocena,dataDodania);
                     przepisList.add(a);
@@ -123,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,Pop.class));
+
             }
         });
 
