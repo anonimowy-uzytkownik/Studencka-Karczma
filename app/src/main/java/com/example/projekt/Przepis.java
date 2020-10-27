@@ -8,14 +8,24 @@ public class Przepis {
     private String ocena;
     private String dataDodania;
     private String skladniki;
+    private String nazwa;
 
-    public Przepis(String obrazek, String autor, String ocena, String dataDodania, String skladniki, String sposobPrzygotowania) {
+    public String getNazwa() {
+        return nazwa;
+    }
+
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
+    }
+
+    public Przepis(String obrazek, String autor, String ocena, String dataDodania, String skladniki, String sposobPrzygotowania, String nazwa) {
         this.obrazek = obrazek;
         this.autor = autor;
         this.ocena = ocena;
         this.dataDodania = dataDodania;
         this.skladniki = skladniki;
         this.sposobPrzygotowania = sposobPrzygotowania;
+        this.nazwa=nazwa;
     }
 
     public Przepis(String obrazek, String autor, String ocena, String dataDodania) {

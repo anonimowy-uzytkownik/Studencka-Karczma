@@ -60,7 +60,7 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
         TextView tvOcena=(TextView) convertView.findViewById(R.id.textView3);
         TextView tvDataDodania=(TextView) convertView.findViewById(R.id.textView4);
 
-        Log.d("obrazek2", obrazek);
+//        Log.d("obrazek2", obrazek);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

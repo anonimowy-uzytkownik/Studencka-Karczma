@@ -16,12 +16,18 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -30,10 +36,12 @@ public class MainActivity extends AppCompatActivity {
     public final String [] tablica={"a","a","a","a"};
 
 
-
+    private StorageReference mStorageRef;
     TextView textViewSkładniki, textViewOpis,textViewTytuł, textViewPrzygotowanie, textViewPorcja;
     Button buttonUlubione,buttonKonto,buttonKupony,buttonCzyszczenie,buttonDodaniePrzepisu;
+    Bitmap obrazekPrzepisu=null;
     //String[] tablica={"a","a","a","a"};
+    static String obrazekPrzepisuPath = null;
     MediaPlayer mySong;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         buttonKupony=findViewById(R.id.buttonKupony);
         buttonCzyszczenie=findViewById(R.id.button);
         buttonDodaniePrzepisu=findViewById(R.id.buttonDodaniePrzepisu);
-
+        mStorageRef = FirebaseStorage.getInstance().getReference();
 
 
             mySong= MediaPlayer.create(MainActivity.this,R.raw.maintheme);
@@ -99,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
 
        // test
-        Query obrazek = FirebaseDatabase.getInstance().getReference().child("Przepisy");
+        final Query obrazek = FirebaseDatabase.getInstance().getReference().child("Przepisy");
 
         Query autor = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(5);
         Query ocena = FirebaseDatabase.getInstance().getReference().child("przepisy").child("3").limitToLast(2);
@@ -118,10 +126,21 @@ public class MainActivity extends AppCompatActivity {
                     String autor = String.valueOf(snapshot.child("autor").getValue());
                     String dataDodania = String.valueOf(snapshot.child("dataDodania").getValue());
                     String ocena = String.valueOf(snapshot.child("ocena").getValue());
+                    String nazwa = String.valueOf(snapshot.child("nazwa").getValue());
+
                     String obrazek = String.valueOf(snapshot.child("obrazek").getValue());
-
-
-                    Przepis a = new Przepis(obrazek,autor,ocena,dataDodania);
+                    //String obrazek = "https://firebasestorage.googleapis.com/v0/b/projekt-zpi-ad1f3.appspot.com/o/images%2F"+String.valueOf(snapshot.child("nazwa").getValue())+"?alt=media";
+                   // Log.d("obrazek sciezka ostat",obrazek);
+/*
+                   try {
+                        getObrazek(String.valueOf(snapshot.child("obrazek").getValue()));
+                        Log.d("CZY JESTES TU","jestem tutaj");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+*/
+                   // Log.d("sciezka do pliku",obrazekPrzepisuPath);
+                    Przepis a = new Przepis(obrazek,nazwa,autor,dataDodania);
                     przepisList.add(a);
 
                     adapter.notifyDataSetChanged();
@@ -151,6 +170,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    public void getObrazek(String nazwaObrazka) throws IOException {
+
+        final File localFile = File.createTempFile("images", "jpg");
+        mStorageRef = FirebaseStorage.getInstance().getReference().child("images/").child(nazwaObrazka);
+        Log.d("mStorageRef",mStorageRef.toString());
+        mStorageRef.getFile(localFile)
+                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        obrazekPrzepisuPath = localFile.getPath();
+
+
+                      //  Log.d("getObrazek",);
+                      //  obrazekPrzepisu= BitmapFactory.decodeFile(filePath);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Log.d("getObrazek","nie udalo sie pozyskac pliku");
+            }
+        });
     }
 
 }
