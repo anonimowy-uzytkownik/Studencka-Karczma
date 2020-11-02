@@ -2,7 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <EditText
+
+    <ImageView
+        android:id="@+id/obrazek"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_above="@id/nazwa"
+        android:layout_centerInParent="true"/>
+
+    <TextView
         android:id="@+id/nazwa"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -12,9 +20,10 @@
         android:gravity="center"
         android:hint="nazwa dania"
         android:inputType="text"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:layout_marginTop="15dp"/>
 
-    <EditText
+    <TextView
         android:id="@+id/skladniki"
         android:layout_width="300dp"
         android:layout_height="100dp"
@@ -25,10 +34,9 @@
         android:gravity="center"
         android:hint="skladniki"
         android:inputType="textMultiLine"
-        android:textColor="#050505"
-        />
+        android:textColor="#050505" />
 
-    <EditText
+    <TextView
         android:id="@+id/sposobPrzygotowania"
         android:layout_width="300dp"
         android:layout_height="200dp"
@@ -40,38 +48,30 @@
         android:inputType="textMultiLine"
         android:textColor="#050505" />
 
-
-    <Button
-        android:id="@+id/zdjecie"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/sposobPrzygotowania"
+    <TextView
+        android:id="@+id/ocena"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/guzik_test"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_test"
         android:gravity="center"
-        android:text="wybierz zdjecie"
-        android:textColor="#A6F1CC68"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:onClick="DodanieZdjecia"/>
+        android:hint="ocena"
+        android:inputType="text"
+        android:textColor="#050505"
+        android:layout_below="@id/sposobPrzygotowania"/>
 
-
-    <Button
-        android:id="@+id/dodawanie"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/zdjecie"
+    <TextView
+        android:id="@+id/autor"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/guzik_test"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_test"
         android:gravity="center"
-        android:text="dodaj przepis"
-        android:textColor="#A6F1CC68"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:onClick="DodaniePrzepisu"/>
-
-
+        android:hint="autor"
+        android:inputType="text"
+        android:textColor="#050505"
+        android:layout_below="@id/ocena"/>
 
 </RelativeLayout>

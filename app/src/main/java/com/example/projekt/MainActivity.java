@@ -11,10 +11,12 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,8 +34,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 public class MainActivity extends AppCompatActivity {
     public final String [] tablica={"a","a","a","a"};
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
 
     private StorageReference mStorageRef;
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
             mySong= MediaPlayer.create(MainActivity.this,R.raw.maintheme);
 
-            mySong.start();
+           // mySong.start();
             mySong.setLooping(true);
 
 
@@ -104,6 +109,23 @@ public class MainActivity extends AppCompatActivity {
 
         final PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);
         mListView.setAdapter(adapter);
+
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+              //  Toast.makeText(MainActivity.this, "Clicked at positon = " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Clicked at id = " + id, Toast.LENGTH_SHORT).show();
+
+                Log.d("position in MainAct", String.valueOf(position));
+                Intent intent = new Intent(MainActivity.this, PrzepisSzczegoly.class);
+                intent.putExtra(EXTRA_MESSAGE, String.valueOf(position));
+                startActivity(intent);
+
+            }
+        });
 
 
        // test

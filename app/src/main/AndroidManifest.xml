@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Kupony"></activity>
+        <activity android:name=".PrzepisSzczegoly"></activity>
+        <activity android:name=".Kupony" />
         <activity android:name=".Konto" />
         <activity android:name=".Ulubione" />
         <activity android:name=".RejestracjaActivity" />
@@ -21,10 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".Pop"
-            android:theme="@style/AppTheme.CustomTheme">
-
-        </activity>
+        <activity
+            android:name=".Pop"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
     </application>
 
 </manifest>
