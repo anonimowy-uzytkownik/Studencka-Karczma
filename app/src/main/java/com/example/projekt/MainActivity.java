@@ -96,7 +96,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Konto.class));
+                Intent intent=new Intent(MainActivity.this, Konto.class);
+                startActivity(intent);
+                finish();
+
             }
         });
         buttonKupony.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +107,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Kupony.class));
+                Intent intent=new Intent(MainActivity.this, Kupony.class);
+                startActivity(intent);
+                finish();
             }
         });
 

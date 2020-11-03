@@ -28,22 +28,26 @@ public class Konto extends AppCompatActivity {
                 finish();
             }
         });
-        buttonPrzepisy.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Konto.this, MainActivity.class));
-            }
-        });
         buttonKupony.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Konto.this, Kupony.class));
+                Intent intent=new Intent(Konto.this, Kupony.class);
+                startActivity(intent);
+                finish();
+
             }
         });
-    }
+        buttonPrzepisy.setOnClickListener(new View.OnClickListener() {
 
-}
+
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Konto.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+}}

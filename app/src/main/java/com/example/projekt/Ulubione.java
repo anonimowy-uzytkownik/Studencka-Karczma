@@ -28,7 +28,9 @@ public class Ulubione extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Ulubione.this, MainActivity.class));
+                Intent intent=new Intent(Ulubione.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
         buttonKonto.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +38,10 @@ public class Ulubione extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Ulubione.this, Konto.class));
+                Intent intent=new Intent(Ulubione.this, Konto.class);
+                startActivity(intent);
+                finish();
+
             }
         });
         buttonKupony.setOnClickListener(new View.OnClickListener() {
@@ -44,9 +49,12 @@ public class Ulubione extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Ulubione.this, Kupony.class));
+                Intent intent=new Intent(Ulubione.this, Kupony.class);
+                startActivity(intent);
+                finish();
             }
         });
+
 
 
         final PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);

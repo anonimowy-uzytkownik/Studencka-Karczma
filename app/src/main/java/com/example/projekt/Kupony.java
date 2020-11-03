@@ -23,12 +23,14 @@ public class Kupony extends AppCompatActivity {
         buttonUlubione=findViewById(R.id.buttonUlubione);
 
 
-        buttonPrzepisy.setOnClickListener(new View.OnClickListener() {
+        buttonUlubione.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Kupony.this, MainActivity.class));
+                Intent intent=new Intent(Kupony.this, Ulubione.class);
+                startActivity(intent);
+                finish();
             }
         });
         buttonKonto.setOnClickListener(new View.OnClickListener() {
@@ -36,17 +38,23 @@ public class Kupony extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Kupony.this, Konto.class));
+                Intent intent=new Intent(Kupony.this, Konto.class);
+                startActivity(intent);
+                finish();
+
             }
         });
-        buttonUlubione.setOnClickListener(new View.OnClickListener() {
+        buttonPrzepisy.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Kupony.this, Ulubione.class));
+                Intent intent=new Intent(Kupony.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
+
 
 
 
