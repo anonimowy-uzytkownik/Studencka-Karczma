@@ -86,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Ulubione.class));
+                Intent intent=new Intent(MainActivity.this, Ulubione.class);
+                startActivity(intent);
+                finish();
             }
         });
         buttonKonto.setOnClickListener(new View.OnClickListener() {
