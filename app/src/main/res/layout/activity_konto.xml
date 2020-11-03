@@ -9,198 +9,132 @@
     tools:context=".Konto">
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="35"
-        android:background="@drawable/guzik_test"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/buttonPlayer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/button"
-        android:layout_weight="80"
-        android:background="@drawable/guzik_test"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_toRightOf="@id/buttonPlayer"
-        android:layout_weight="80"
-        android:background="@drawable/guzik_test"
-        android:text="Button" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@id/button"
-        android:layout_marginTop="5dp"
-        app:srcCompat="@drawable/guzik_test2" />
-
-    <Button
-        android:id="@+id/button_ZobaczDodanePrzepisy"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button"
-        android:layout_gravity="center"
-        android:layout_toRightOf="@id/imageButton"
-        android:background="@drawable/guzik_test"
-        android:text="Button" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView_NazwaUżytkownika"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_ZobaczDodanePrzepisy"
-        android:layout_gravity="center"
-        android:layout_toRightOf="@id/imageButton"
-        android:text="TextView" />
+        <LinearLayout
+            android:id="@+id/llinear1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#000000"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView_DataDołączenia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_NazwaUżytkownika"
-        android:layout_gravity="center"
-        android:layout_toRightOf="@id/imageButton"
-        android:text="TextView" />
 
-    <TextView
-        android:id="@+id/textView_Wiek"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_DataDołączenia"
-        android:layout_gravity="center"
-        android:layout_toRightOf="@id/imageButton"
-        android:text="TextView" />
+            <Button
+                android:id="@+id/buttonDodaniePrzepisu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="80"
+                android:background="@drawable/guzik_test2"
+                android:text="dodaj przepis"
+                android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/textView_Imię"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView_Wiek"
-        android:layout_toRightOf="@id/imageButton"
-        android:text="TextView" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="80"
+                android:background="@drawable/guzik_test2"
+                android:text="button" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageButton"
-        android:text="TextView" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView8"
-        android:text="TextView" />
+            <Button
+                android:id="@+id/buttonPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="80"
+                android:background="@drawable/guzik_test2"
 
-    <TextView
-        android:id="@+id/mojePrzepisy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView9"
-        android:layout_gravity="center"
-        android:layout_marginTop="1dp"
-        android:background="@drawable/guzik_test"
-        android:text="Moje Przepisy"
-        android:textColor="#000000"
-        android:textSize="36sp"
-        android:textStyle="bold" />
+                android:text="wycisz" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="300dp"
-        android:layout_height="210dp"
-        android:layout_below="@id/mojePrzepisy"
-        android:layout_marginTop="5dp"
-        android:layout_weight="40"
-        android:background="@android:drawable/ic_menu_compass"
-        android:gravity="center"
-        android:text="Obrazek"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="80"
+                android:background="@drawable/guzik_test2"
+                android:text="Button" />
 
-    <Button
-        android:id="@+id/buttonEdytuj"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@id/mojePrzepisy"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/textView1"
-        android:background="@drawable/guzik_test"
-        android:gravity="center"
-        android:text="Edytuj"
-        android:textColor="#000000" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@id/buttonEdytuj"
-        android:layout_toRightOf="@id/textView1"
-        android:background="@drawable/guzik_test"
-        android:gravity="center"
-        android:text="Ocena"
-        android:textColor="#000000" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@id/textView3"
-        android:layout_toRightOf="@id/textView1"
-        android:background="@drawable/guzik_test"
-        android:gravity="center"
-        android:text="Data dodania"
-        android:textColor="#000000" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="179dp"
+            android:layout_height="167dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/buttonPrzepisy"
-        android:layout_width="105dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_weight="1"
-        android:background="@drawable/guzik_test2"
-        android:text="Przepisy"
+        <TextView
+            android:id="@+id/textMojePrzepisy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/guzik_test"
+            android:text="Moje Przepisy"
+            android:textColor="#000000"
+            android:textSize="36sp" />
 
-        />
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="462dp"
+            android:layout_weight="60">
 
-    <Button
-        android:id="@+id/buttonUlubione"
-        android:layout_width="105dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/buttonPrzepisy"
-        android:layout_weight="1"
-        android:background="@drawable/guzik_test2"
-        android:text="Ulubione" />
+        </ListView>
 
-    <Button
-        android:id="@+id/buttonKonto"
-        android:layout_width="105dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/buttonUlubione"
-        android:background="@drawable/guzik_test2"
-        android:text="Konto" />
 
-    <Button
-        android:id="@+id/buttonKupony"
-        android:layout_width="105dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/buttonKonto"
-        android:background="@drawable/guzik_test2"
-        android:text="Kupony" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="#000000">
+
+
+            <Button
+                android:id="@+id/buttonPrzepisy"
+                android:background="@drawable/guzik_test2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Przepisy" />
+
+            <Button
+                android:id="@+id/buttonUlubione"
+                android:background="@drawable/guzik_test2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ulubione" />
+
+
+            <Button
+                android:id="@+id/buttonKonto"
+                android:background="@drawable/guzik_test2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Konto" />
+
+            <Button
+                android:id="@+id/buttonKupony"
+                android:background="@drawable/guzik_test2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kupony"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
