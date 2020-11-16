@@ -45,6 +45,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/guzik_test"
         android:gravity="center"
+        android:onClick="graj"
         android:text="zaloguj sie!"
         android:textColor="#A6F1CC68"
         android:textSize="20sp"

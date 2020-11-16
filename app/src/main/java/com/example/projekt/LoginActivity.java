@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -23,6 +24,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
+
+    MediaPlayer mySong;
 
     Button btnLogowanie, btnRejestracja;
     EditText etEmail, etHaslo;
@@ -65,6 +68,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 String email = etEmail.getText().toString().trim();
                 String haslo = etHaslo.getText().toString().trim();
+
+                mySong= MediaPlayer.create(LoginActivity.this,R.raw.maintheme);
+                mySong.start();
+                mySong.setLooping(true);
 
 
                 mFirebaseAuth.signInWithEmailAndPassword(email, haslo).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
