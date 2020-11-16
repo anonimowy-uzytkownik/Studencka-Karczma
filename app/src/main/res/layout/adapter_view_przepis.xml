@@ -18,6 +18,20 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:background="@drawable/guzik_test"/> !-->
+    <Button
+        android:id="@+id/dodawanieDoUlubionych"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="+"
+        android:focusable="false"/>
+    <Button
+        android:id="@+id/odejmowanieZUlubionych"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="-"
+        android:focusable="false"/>
 
     <ImageView
         android:id="@+id/imageView1"

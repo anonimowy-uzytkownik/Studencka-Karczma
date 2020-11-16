@@ -68,6 +68,7 @@
             android:id="@+id/imageView"
             android:layout_width="190dp"
             android:layout_height="167dp"
+            app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView

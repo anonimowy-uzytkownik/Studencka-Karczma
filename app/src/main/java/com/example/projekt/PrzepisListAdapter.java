@@ -10,11 +10,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,12 +37,6 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
     private Context mContext;
     int mResource;
 
-  /*  public PrzepisListAdapter(@NonNull android.content.Context context, int resource, @NonNull ArrayList<Przepis> objects, Context mContext) {
-        super(context, resource, objects);
-        this.mContext=context;
-        this.mResource=resource;
-    }
-*/
     public PrzepisListAdapter(android.content.Context context, int resource, ArrayList<Przepis> objects) {
         super(context, resource, objects);
         this.mContext=context;
@@ -45,10 +49,11 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-        String obrazek = getItem(position).getObrazek();
-        String autor = getItem(position).getAutor();
-        String ocena = getItem(position).getOcena();
-        String dataDodania = getItem(position).getDataDodania();
+        final String obrazek = getItem(position).getObrazek();
+        final String autor = getItem(position).getAutor();
+        final String ocena = getItem(position).getOcena();
+        final String dataDodania = getItem(position).getDataDodania();
+        final String nazwaDania = getItem(position).getNazwa();
 
         //Przepis przepis = new Przepis(obrazek, autor, ocena, dataDodania);
 
@@ -59,6 +64,8 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
         TextView tvAutor=(TextView) convertView.findViewById(R.id.textView2);
         TextView tvOcena=(TextView) convertView.findViewById(R.id.textView3);
         TextView tvDataDodania=(TextView) convertView.findViewById(R.id.textView4);
+        Button DodawanieDoUlubionych = convertView.findViewById(R.id.dodawanieDoUlubionych);
+        Button OdejmowanieZUlubionych = convertView.findViewById(R.id.odejmowanieZUlubionych);
 
 //        Log.d("obrazek2", obrazek);
 
@@ -71,6 +78,29 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
             ivObrazek.setImageBitmap(image);
         } catch(IOException e) {}
 
+
+
+
+        DodawanieDoUlubionych.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                final String nickname =  user.getEmail();
+                DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Przepisy").child(nazwaDania).child("ulubione");
+                usersRef.child(String.valueOf(nickname.hashCode())).setValue(String.valueOf(nickname.hashCode()));
+
+            }
+        });
+
+        OdejmowanieZUlubionych.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                final String nickname =  user.getEmail();
+                DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Przepisy").child(nazwaDania).child("ulubione");
+                usersRef.child(String.valueOf(nickname.hashCode())).setValue(null);
+            }
+        });
 
 
         //ivObrazek.setImageBitmap(obrazek);

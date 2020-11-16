@@ -60,22 +60,6 @@ public class MainActivity extends AppCompatActivity {
         mStorageRef = FirebaseStorage.getInstance().getReference();
 
 
-
-
-
-/*  Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
-        Przepis ziemniaki=new Przepis("jakiś obrazek","Rojex","1,6","20.04.1950");
-        Przepis buraki=new Przepis("jakiś obrazek","Kotlex","1,7","2.09.1960");
-        Przepis kotlet=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
-        Przepis kotlet1=new Przepis("jakiś obrazek","kotlarski","4,5","2.09.1960");
-        final ArrayList<Przepis> przepisList = new ArrayList<>();
-
-        przepisList.add(buraki);
-        przepisList.add(kotlet);
-        przepisList.add(kotlet1);
-        przepisList.add(kotlet1); */
-
-
         final ArrayList<Przepis> przepisList = new ArrayList<>();
         buttonUlubione.setOnClickListener(new View.OnClickListener() {
 
@@ -121,11 +105,16 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //  Toast.makeText(MainActivity.this, "Clicked at positon = " + position, Toast.LENGTH_SHORT).show();
                 //Toast.makeText(getContext(), "Clicked at id = " + id, Toast.LENGTH_SHORT).show();
+
+
+
 
                 Log.d("position in MainAct", String.valueOf(position));
                 Intent intent = new Intent(MainActivity.this, PrzepisSzczegoly.class);
@@ -178,7 +167,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 */
                    // Log.d("sciezka do pliku",obrazekPrzepisuPath);
-                   Przepis a = new Przepis(obrazek,nazwa,autor,dataDodania);
+                //   Przepis a = new Przepis(obrazek,nazwa,autor,dataDodania,nazwa);
+                   Przepis a = new Przepis(obrazek,autor,ocena,dataDodania,nazwa);
 
                    przepisList.add(a);
 

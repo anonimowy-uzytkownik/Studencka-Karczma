@@ -1,7 +1,5 @@
 package com.example.projekt;
 
-import android.graphics.Bitmap;
-
 public class Przepis {
     private String obrazek;
     private String autor;
@@ -33,6 +31,14 @@ public class Przepis {
         this.autor = autor;
         this.ocena = ocena;
         this.dataDodania = dataDodania;
+    }
+
+    public Przepis(String obrazek, String autor, String ocena, String dataDodania,String nazwa) {
+        this.obrazek = obrazek;
+        this.autor = autor;
+        this.ocena = ocena;
+        this.dataDodania = dataDodania;
+        this.nazwa = nazwa;
     }
 
     public String getSkladniki() {
