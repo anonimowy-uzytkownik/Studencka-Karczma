@@ -75,25 +75,24 @@
 
             <Button
                 android:id="@+id/buttonUlubione"
-                android:layout_width="108dp"
+                android:layout_width="109dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/javaczerw" />
 
             <Button
                 android:id="@+id/buttonKonto"
-                android:layout_width="108dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/konto" />
 
             <Button
                 android:id="@+id/buttonKupony"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Kupony"
-                android:background="@drawable/guzik_test2"/>
+                android:background="@drawable/kupony" />
         </LinearLayout>
     </LinearLayout>
 
