@@ -61,7 +61,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal"
             android:background="#000000">
 
@@ -82,11 +82,10 @@
 
             <Button
                 android:id="@+id/buttonKonto"
-                android:layout_width="wrap_content"
+                android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Konto"
-                android:background="@drawable/guzik_test2"/>
+                android:background="@drawable/konto" />
 
             <Button
                 android:id="@+id/buttonKupony"

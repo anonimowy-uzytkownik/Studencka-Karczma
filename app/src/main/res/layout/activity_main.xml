@@ -93,18 +93,17 @@
 
             <Button
                 android:id="@+id/buttonUlubione"
-                android:layout_width="108dp"
+                android:layout_width="110dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/javanew" />
 
             <Button
                 android:id="@+id/buttonKonto"
-                android:background="@drawable/guzik_test2"
-                android:layout_width="wrap_content"
+                android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Konto" />
+                android:background="@drawable/konto" />
 
             <Button
                 android:id="@+id/buttonKupony"
