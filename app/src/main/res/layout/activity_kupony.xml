@@ -68,19 +68,18 @@
 
             <Button
                 android:id="@+id/buttonPrzepisy"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Przepisy"
-                android:background="@drawable/guzik_test2"/>
+                android:background="@drawable/homeprzepisy"
+                android:text="Przepisy" />
 
             <Button
                 android:id="@+id/buttonUlubione"
-                android:layout_width="wrap_content"
+                android:layout_width="108dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ulubione"
-                android:background="@drawable/guzik_test2"/>
+                android:background="@drawable/javanew" />
 
             <Button
                 android:id="@+id/buttonKonto"
