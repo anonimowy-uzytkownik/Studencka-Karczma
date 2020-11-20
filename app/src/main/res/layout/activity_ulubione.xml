@@ -78,7 +78,7 @@
                 android:layout_width="109dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/javaczerw" />
+                android:background="@drawable/ulubioneczerwaktywny" />
 
             <Button
                 android:id="@+id/buttonKonto"
