@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item>
         <shape>
             <corners android:radius="20dp" />
@@ -18,12 +18,12 @@
         <!-- left is icon size + 2x side padding around icon-->
         <!-- 18 + 8 + 8 -->
         <shape>
-            <solid android:color="#3c0008" />
-            <corners android:radius="6dp"
-                android:topRightRadius="6dp"
-                android:topLeftRadius="6dp"
-                android:bottomRightRadius="6dp"
-                android:bottomLeftRadius="6dp"/>
+            <solid android:color="#23120B" />
+            <corners android:radius="1dp"
+                android:topRightRadius="1dp"
+                android:topLeftRadius="1dp"
+                android:bottomRightRadius="1dp"
+                android:bottomLeftRadius="1dp"/>
         </shape>
     </item>
 
@@ -33,8 +33,8 @@
             <corners android:radius="6dp" />
             <solid android:color="@android:color/transparent" />
             <stroke
-                android:width="3dp"
-                android:color="#d18645" />
+                android:width="4dp"
+                android:color="#5c0008" />
         </shape>
     </item>
 </layer-list>
