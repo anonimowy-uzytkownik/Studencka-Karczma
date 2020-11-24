@@ -114,7 +114,9 @@ public class Pop extends Activity {
         String nickname =  user.getEmail();
 
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Przepisy");
+        if (!nazwa.getText().toString().isEmpty()){
         usersRef.child(nazwa.getText().toString()).setValue(new Przepis(obrazek, nickname,"5",dzisiejszaData.toString(),skladniki.getText().toString(),sposobPrzygotowania.getText().toString(),nazwa.getText().toString()));
+        }
     }
 
 
