@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <EditText
+        android:id="@+id/editTextNoweHaslo"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/editTextNoweHasloPowtorzone"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:hint="new password"
+        android:inputType="textPassword"
+        android:textColor="#050505"
+        android:background="@drawable/edittext_test"
+        />
+
+    <EditText
+        android:id="@+id/editTextNoweHasloPowtorzone"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:hint="repeat new password"
+        android:inputType="textPassword"
+        android:textColor="#050505"
+        android:background="@drawable/edittext_test"
+        />
+
+
+
+    <Button
+        android:id="@+id/buttonZmianaHasla"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editTextNoweHasloPowtorzone"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="SAVE CHANGES"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        />
+
+</RelativeLayout>

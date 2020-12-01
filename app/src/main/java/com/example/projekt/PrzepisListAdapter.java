@@ -74,6 +74,7 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
 
         try {
             URL url = new URL(obrazek);
+            Log.d("url",String.valueOf(url));
             Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
             ivObrazek.setImageBitmap(image);
         } catch(IOException e) {}

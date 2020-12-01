@@ -34,6 +34,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 
 public class Pop extends Activity {
@@ -45,7 +46,7 @@ public class Pop extends Activity {
     private FirebaseStorage storage;
     private StorageReference storageReference;
     static boolean czyUploadowac=false;
-     static  String obrazekURL=null;
+    static String obrazekURL=null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,24 +64,6 @@ public class Pop extends Activity {
 
         getWindow().setLayout((int)(width*0.8),(int)(height * 0.8));
 
-
-/*
-
-        buttonDodawanie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              //  Query Referencja = FirebaseDatabase.getInstance().getReference().child("Przepisy");
-               // DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Przepisy");
-              //  usersRef.child("Groch z kapusta").setValue(new Przepis(obrazek.getText().toString(), autor.getText().toString(),ocena.getText().toString(),dataDodania.getText().toString()));
-             //   usersRef.child("Groch z kapusta").setValueAsync(new Przepis(obrazek.getText().toString(), autor.getText().toString(),ocena.getText().toString(),dataDodania.getText().toString()));
-
-            }
-        });
-     */
-
-
-
-
     }
 
 
@@ -90,25 +73,12 @@ public class Pop extends Activity {
         nazwa=findViewById(R.id.nazwa);
         skladniki=findViewById(R.id.skladniki);
         sposobPrzygotowania=findViewById(R.id.sposobPrzygotowania);
-       // Date dzisiejszaData = Calendar.getInstance().getTime();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dzisiejszaData = dateFormat.format(Calendar.getInstance().getTime());
-        //dateTimeDisplay.setText(date);
+        String obrazek="debil";
 
-        String obrazek = "https://firebasestorage.googleapis.com/v0/b/projekt-zpi-ad1f3.appspot.com/o/images%2F"+nazwa.getText().toString()+"?alt=media";
-
-      //  Log.d("obrazekURL",obrazekURL);
-
-
-
-        if(czyUploadowac==true)
-            uploadPicture(nazwa.getText().toString());
-
-        if(obrazekURL!=null) {
-            obrazek = obrazekURL;
-            Log.d("obrazek",obrazek);
-        } else {Log.d("obrazekURL","JESTEM NULL");}
+        obrazek=obrazekURL;
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String nickname =  user.getEmail();
@@ -117,6 +87,7 @@ public class Pop extends Activity {
         if (!nazwa.getText().toString().isEmpty()){
         usersRef.child(nazwa.getText().toString()).setValue(new Przepis(obrazek, nickname,"5",dzisiejszaData.toString(),skladniki.getText().toString(),sposobPrzygotowania.getText().toString(),nazwa.getText().toString()));
         }
+
     }
 
 
@@ -143,14 +114,15 @@ public class Pop extends Activity {
 
                 storage= FirebaseStorage.getInstance();
                 storageReference= storage.getReference();
-                czyUploadowac=true;
-                //uploadPicture();
+
+                Random random = new Random(9999);
+                obrazekURL=uploadPicture(String.valueOf(String.valueOf(random.nextDouble()).hashCode()));
 
             }
         }
     }
 
-    private void uploadPicture(String nazwaPliku) {
+    private String uploadPicture(String nazwaPliku) {
 
         //final String randomKey = UUID.randomUUID().toString();
         StorageReference riversRef = storageReference.child("images/" + nazwaPliku);
@@ -183,7 +155,7 @@ public class Pop extends Activity {
                     }
                 });
 
-
+        return obrazekURL;
     }
 
 

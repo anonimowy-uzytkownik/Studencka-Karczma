@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RejestracjaActivity extends AppCompatActivity {
 
@@ -40,7 +44,7 @@ public class RejestracjaActivity extends AppCompatActivity {
         btnRejestracja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = etEmail.getText().toString().trim();
+                final String email = etEmail.getText().toString().trim();
                 String haslo = etHaslo.getText().toString().trim();
                 String haslo_powtorz = etHaslo_powtorz.getText().toString().trim();
 
@@ -72,6 +76,18 @@ public class RejestracjaActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             sendVerificationEmail();
                             Toast.makeText(RejestracjaActivity.this, "Konto stworzone, prosze potwierdzic adres email!", Toast.LENGTH_SHORT).show();
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                            DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("Użytkownicy");
+
+
+                            usersRef.child(String.valueOf(email.hashCode())).setValue(new Uzytkownik(email));
+
+
+
+
+
+
                             startActivity(new Intent(RejestracjaActivity.this, LoginActivity.class));
                         } else {
                             Toast.makeText(RejestracjaActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
