@@ -12,10 +12,12 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -97,7 +99,25 @@ public class Konto extends AppCompatActivity {
 
 
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+
+                //TextView textViewAutor = view.findViewById(R.id.autor);
+                String autor = adapter.getItem(position).getAutor();
+                String nazwa  = adapter.getItem(position).getNazwa();
+
+                Intent i = new Intent(Konto.this,EdycjaPrzepisuActivity.class);
+                i.putExtra("nazwa",nazwa);
+
+                startActivity(i);
+               // View viewautor= view.findViewById(R.id.autor);
+               // Toast.makeText(getApplicationContext(), "Clicked at positon = "+ autor, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getContext(), "Clicked at positon = " + position, Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
 
 

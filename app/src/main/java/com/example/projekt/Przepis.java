@@ -26,6 +26,16 @@ public class Przepis {
         this.nazwa=nazwa;
     }
 
+    public Przepis( String autor, String ocena, String dataDodania, String skladniki, String sposobPrzygotowania, String nazwa) {
+        this.obrazek = obrazek;
+        this.autor = autor;
+        this.ocena = ocena;
+        this.dataDodania = dataDodania;
+        this.skladniki = skladniki;
+        this.sposobPrzygotowania = sposobPrzygotowania;
+        this.nazwa=nazwa;
+    }
+
     public Przepis(String obrazek, String autor, String ocena, String dataDodania) {
         this.obrazek = obrazek;
         this.autor = autor;

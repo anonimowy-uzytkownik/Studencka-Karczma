@@ -14,6 +14,7 @@
         <activity android:name=".Konto" />
         <activity android:name=".Ulubione" />
         <activity android:name=".RejestracjaActivity" />
+        <activity android:name=".EdycjaPrzepisuActivity" />
         <activity android:name=".ZmianaEmaila" />
         <activity android:name=".ZmianaHasla"
             android:theme="@style/AppTheme.CustomTheme"/>
