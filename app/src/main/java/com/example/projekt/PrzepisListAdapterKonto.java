@@ -3,7 +3,6 @@ package com.example.projekt;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,29 +14,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
-public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
+public class PrzepisListAdapterKonto  extends ArrayAdapter<Przepis> {
     private static final String TAG = "PrzepisListAdapter";
 
     private Context mContext;
     int mResource;
 
-    public PrzepisListAdapter(android.content.Context context, int resource, ArrayList<Przepis> objects) {
+    public PrzepisListAdapterKonto(android.content.Context context, int resource, ArrayList<Przepis> objects) {
         super(context, resource, objects);
         this.mContext=context;
         this.mResource=resource;
@@ -78,20 +71,6 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
             Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
             ivObrazek.setImageBitmap(image);
         } catch(IOException e) {}
-
-
-
-
-        DodawanieDoUlubionych.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                final String nickname =  user.getEmail();
-                DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Przepisy").child(nazwaDania).child("ulubione");
-                usersRef.child(String.valueOf(nickname.hashCode())).setValue(String.valueOf(nickname.hashCode()));
-
-            }
-        });
 
 
 

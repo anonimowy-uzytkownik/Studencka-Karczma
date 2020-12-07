@@ -8,24 +8,16 @@
     android:weightSum="100"
     >
 
-  <!--  <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_weight="40"
-        android:gravity="center"
-        android:text="Obrazek"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/guzik_test"/> !-->
-    <Button
-        android:id="@+id/dodawanieDoUlubionych"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:text="+"
-        android:focusable="false"/>
-
+    <!--  <TextView
+          android:id="@+id/textView1"
+          android:layout_width="match_parent"
+          android:layout_height="210dp"
+          android:layout_weight="40"
+          android:gravity="center"
+          android:text="Obrazek"
+          android:textAlignment="center"
+          android:textColor="#FFFFFF"
+          android:background="@drawable/guzik_test"/> !-->
 
     <ImageView
         android:id="@+id/imageView1"

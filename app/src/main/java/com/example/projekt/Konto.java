@@ -61,7 +61,7 @@ public class Konto extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView1);
         final ArrayList<Przepis> przepisList = new ArrayList<>();
-        final PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);
+        final PrzepisListAdapterKonto adapter= new PrzepisListAdapterKonto(this,R.layout.adapter_view_konto,przepisList);
         listView.setAdapter(adapter);
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 

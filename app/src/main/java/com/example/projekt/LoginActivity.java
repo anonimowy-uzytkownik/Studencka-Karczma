@@ -66,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                progressBar.setVisibility(View.VISIBLE);
                 String email = etEmail.getText().toString().trim();
                 String haslo = etHaslo.getText().toString().trim();
 
@@ -78,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        progressBar.setVisibility(View.VISIBLE);
+
 
                         if (task.isSuccessful()) {
 

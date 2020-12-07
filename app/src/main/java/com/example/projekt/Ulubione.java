@@ -67,7 +67,7 @@ public class Ulubione extends AppCompatActivity {
 
 
 
-        final PrzepisListAdapter adapter= new PrzepisListAdapter(this,R.layout.adapter_view_przepis,przepisList);
+        final PrzepisListAdapterUlubione adapter= new PrzepisListAdapterUlubione(this,R.layout.adapter_view_ulubione,przepisList);
         mListView.setAdapter(adapter);
 
         final Query obrazek = FirebaseDatabase.getInstance().getReference().child("Przepisy");
