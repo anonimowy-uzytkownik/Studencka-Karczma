@@ -48,6 +48,7 @@ public class Pop extends Activity {
     static boolean czyUploadowac=false;
     static String obrazekURL=null;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,16 +94,23 @@ public class Pop extends Activity {
 
     public void DodanieZdjecia(View view) {
 
+        final EditText nazwa,skladniki,sposobPrzygotowania;
+        nazwa=findViewById(R.id.nazwa);
+
+        if(!nazwa.getText().equals(null)){
         Intent i = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         final int ACTIVITY_SELECT_IMAGE = 1234;
         startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
+        }
 
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             if (requestCode == 1234) {
+                final EditText nazwa;
+                nazwa=findViewById(R.id.nazwa);
                 Uri selectedImageUri = data.getData();
 
                 selectedImagePath = getPath(selectedImageUri);
@@ -115,8 +123,8 @@ public class Pop extends Activity {
                 storage= FirebaseStorage.getInstance();
                 storageReference= storage.getReference();
 
-                Random random = new Random(9999);
-                obrazekURL=uploadPicture(String.valueOf(String.valueOf(random.nextDouble()).hashCode()));
+              //  Random random = new Random(9999);
+                obrazekURL=uploadPicture(String.valueOf(String.valueOf(nazwa.getText())));
 
             }
         }
