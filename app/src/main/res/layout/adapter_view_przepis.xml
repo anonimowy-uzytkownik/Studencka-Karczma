@@ -31,13 +31,12 @@
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="210dp"
+        android:layout_marginTop="50dp"
         android:layout_weight="40"
         android:gravity="center"
         android:text="Obrazek"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:layout_marginTop="50dp"
-        />
+        android:textColor="#FFFFFF" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -51,30 +50,28 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:background="@drawable/guzik_test"
             android:gravity="center"
             android:text="Autor"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"
-            />
+            android:textColor="#F1CC68" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:background="@drawable/guzik_test"
             android:gravity="center"
             android:text="Ocena"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"/>
+            android:textColor="#F1CC68" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:background="@drawable/guzik_test"
             android:gravity="center"
             android:text="Data dodania"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"
-            />
+            android:textColor="#F1CC68" />
 
 
     </LinearLayout>

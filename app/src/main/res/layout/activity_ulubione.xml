@@ -26,16 +26,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_weight="35"
+                android:background="@drawable/guzik_test2"
                 android:text="Button"
-                android:background="@drawable/guzik_test2"/>
+                android:textColor="#F1CC68" />
 
             <Button
                 android:id="@+id/buttonPlayer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
+                android:background="@drawable/guzik_test2"
                 android:text="Button"
-                android:background="@drawable/guzik_test2"/>
+                android:textColor="#F1CC68" />
 
             <Button
                 android:id="@+id/button3"
@@ -43,8 +45,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_weight="80"
+                android:background="@drawable/guzik_test2"
                 android:text="Button"
-                android:background="@drawable/guzik_test2"/>
+                android:textColor="#F1CC68" />
 
 
         </LinearLayout>

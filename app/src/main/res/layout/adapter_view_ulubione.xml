@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
-
     android:layout_height="match_parent"
-    android:weightSum="100"
-    >
+
+    android:orientation="horizontal"
+    android:weightSum="100">
 
     <!--  <TextView
           android:id="@+id/textView1"
@@ -18,13 +17,14 @@
           android:textAlignment="center"
           android:textColor="#FFFFFF"
           android:background="@drawable/guzik_test"/> !-->
+
     <Button
         android:id="@+id/odejmowanieZUlubionych"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:focusable="false"
         android:layout_marginTop="50dp"
-        android:text="-"
-        android:focusable="false"/>
+        android:text="-" />
 
 
     <ImageView
@@ -32,49 +32,47 @@
         android:layout_width="match_parent"
         android:layout_height="210dp"
         android:layout_weight="40"
+        android:cropToPadding="true"
         android:gravity="center"
         android:text="Obrazek"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
         android:layout_marginTop="50dp"
-        />
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="60"
-        android:layout_marginTop="50dp">
+        android:orientation="vertical">
 
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:background="@drawable/guzik_test"
             android:gravity="center"
             android:text="Autor"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"
-            />
+            android:layout_marginTop="50dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:background="@drawable/guzik_test"
             android:gravity="center"
             android:text="Ocena"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"/>
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:background="@drawable/guzik_test"
             android:gravity="center"
             android:text="Data dodania"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"
-            />
+            android:textColor="#FFFFFF" />
 
 
     </LinearLayout>

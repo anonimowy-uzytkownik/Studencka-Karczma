@@ -1,77 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_przepisy">
 
 
-    <ImageView
-        android:id="@+id/obrazek"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_above="@id/nazwa"
-        android:layout_centerInParent="true"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/nazwa"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/skladniki"
-        android:layout_centerInParent="true"
-        android:background="@drawable/edittext_test"
-        android:gravity="center"
-        android:hint="nazwa dania"
-        android:inputType="text"
-        android:textColor="#000000"
-        android:layout_marginTop="15dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/skladniki"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/sposobPrzygotowania"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext_test"
-        android:gravity="center"
-        android:hint="skladniki"
-        android:inputType="textMultiLine"
-        android:textColor="#050505" />
+            <ImageView
+                android:id="@+id/obrazek"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:cropToPadding="true" />
 
-    <TextView
-        android:id="@+id/sposobPrzygotowania"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext_test"
-        android:gravity="center"
-        android:hint="sposobPrzygotowania"
-        android:inputType="textMultiLine"
-        android:textColor="#050505" />
+            <TextView
+                android:id="@+id/nazwa"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
 
-    <TextView
-        android:id="@+id/ocena"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext_test"
-        android:gravity="center"
-        android:hint="ocena"
-        android:inputType="text"
-        android:textColor="#050505"
-        android:layout_below="@id/sposobPrzygotowania"/>
 
-    <TextView
-        android:id="@+id/autor"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext_test"
-        android:gravity="center"
-        android:hint="autor"
-        android:inputType="text"
-        android:textColor="#050505"
-        android:layout_below="@id/ocena"/>
+                android:gravity="center_horizontal"
+                android:hint="nazwa dania"
+                android:inputType="text"
+                android:textColor="#FF9800"
+                android:textColorHint="#FF9800"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/skladniki"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edittext_test"
+                android:gravity="center"
+                android:padding="10dp"
+                android:hint="skladniki"
+                android:inputType="textMultiLine"
+                android:textColor="#050505" />
+
+            <TextView
+                android:id="@+id/sposobPrzygotowania"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittext_test"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:hint="sposobPrzygotowania"
+                android:inputType="textMultiLine"
+                android:textColor="#050505" />
+
+            <TextView
+                android:id="@+id/autor"
+                android:layout_gravity="center"
+
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="75dp"
+                android:background="@drawable/guzik_test"
+                android:gravity="center"
+                android:hint="autor"
+                android:inputType="text"
+                android:textColor="#FF9800"
+                android:textColorHint="#FF9800" />
+
+            <TextView
+                android:id="@+id/ocena"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/guzik_test"
+                android:gravity="center"
+                android:hint="ocena"
+                android:inputType="text"
+                android:textColor="#FF9800"
+                android:textColorHint="#FF9800" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
