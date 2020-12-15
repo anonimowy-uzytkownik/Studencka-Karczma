@@ -1,79 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:orientation="horizontal"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:orientation="horizontal"
 
-    android:layout_height="match_parent"
-    android:weightSum="100"
+android:layout_height="match_parent"
+android:weightSum="100"
     >
 
-    <!--  <TextView
-          android:id="@+id/textView1"
-          android:layout_width="match_parent"
-          android:layout_height="210dp"
-          android:layout_weight="40"
-          android:gravity="center"
-          android:text="Obrazek"
-          android:textAlignment="center"
-          android:textColor="#FFFFFF"
-          android:background="@drawable/guzik_test"/> !-->
-    <Button
-        android:id="@+id/dodawanieDoUlubionych"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:text="+"
-        android:focusable="false"/>
-
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_marginTop="50dp"
-        android:layout_weight="40"
-        android:gravity="center"
-        android:text="Obrazek"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="60"
+    android:layout_marginTop="50dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="60"
-        android:layout_marginTop="50dp">
-
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewNazwaKuponu"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@drawable/guzik_test"
             android:gravity="center"
-            android:text="Autor"
-            android:textColor="#F1CC68" />
+            android:text="nazwa kuponu"
+            android:textColor="#F1CC68"
+            android:layout_weight="50"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textViewNazwaRestauracji"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@drawable/guzik_test"
             android:gravity="center"
-            android:text="Ocena"
-            android:textColor="#F1CC68" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@drawable/guzik_test"
-            android:gravity="center"
-            android:text="Data dodania"
-            android:textColor="#F1CC68" />
-
+            android:text="nazwa restauracji"
+            android:textColor="#F1CC68"
+            android:layout_weight="50"/>
 
     </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textViewKodKuponu"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/guzik_test"
+        android:gravity="center"
+        android:text="KOD"
+        android:textSize="45dp"
+        android:textColor="#F1CC68" />
+
+    <TextView
+        android:id="@+id/textViewOpisKuponu"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/guzik_test"
+        android:gravity="center"
+        android:text="Opis kuponu..."
+        android:textColor="#F1CC68" />
+
+
+</LinearLayout>
 
 </LinearLayout>

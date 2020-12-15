@@ -113,9 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 //  Toast.makeText(MainActivity.this, "Clicked at positon = " + position, Toast.LENGTH_SHORT).show();
                 //Toast.makeText(getContext(), "Clicked at id = " + id, Toast.LENGTH_SHORT).show();
 
-
-
-
                 Log.d("position in MainAct", String.valueOf(position));
                 Intent intent = new Intent(MainActivity.this, PrzepisSzczegoly.class);
                 intent.putExtra(EXTRA_MESSAGE, String.valueOf(position));
@@ -155,19 +152,6 @@ public class MainActivity extends AppCompatActivity {
                    String ocena = String.valueOf(snapshot.child("ocena").getValue());
                    String nazwa = String.valueOf(snapshot.child("nazwa").getValue());
 
-
-                   //String obrazek = "https://firebasestorage.googleapis.com/v0/b/projekt-zpi-ad1f3.appspot.com/o/images%2F"+String.valueOf(snapshot.child("nazwa").getValue())+"?alt=media";
-                   // Log.d("obrazek sciezka ostat",obrazek);
-/*
-                   try {
-                        getObrazek(String.valueOf(snapshot.child("obrazek").getValue()));
-                        Log.d("CZY JESTES TU","jestem tutaj");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-*/
-                   // Log.d("sciezka do pliku",obrazekPrzepisuPath);
-                //   Przepis a = new Przepis(obrazek,nazwa,autor,dataDodania,nazwa);
                    Przepis a = new Przepis(obrazek,autor,ocena,dataDodania,nazwa);
 
                    przepisList.add(a);
