@@ -125,7 +125,7 @@ public class EdycjaPrzepisuActivity extends AppCompatActivity {
                 //edytowanyPrzepis.setValue(new Przepis(String.valueOf(TVautor.getText()), String.valueOf(TVocena.getText()), dzisiejszaData, String.valueOf(TVskladniki.getText()), String.valueOf(TVsposobPrzygotowania.getText()), String.valueOf(TVnazwa.getText())));
                 try
                 {
-                    edytowanyPrzepis.child("autor").setValue(String.valueOf(TVautor.getText()));
+            //        edytowanyPrzepis.child("autor").setValue(String.valueOf(TVautor.getText()));
                     edytowanyPrzepis.child("dataDodania").setValue(dzisiejszaData);
                     // edytowanyPrzepis.child("nazwa").setValue();
                     // edytowanyPrzepis.child("obrazek").setValue();

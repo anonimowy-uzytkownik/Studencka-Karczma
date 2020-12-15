@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PrzepisSzczegoly"></activity>
+        <activity android:name=".PrzepisSzczegolyUlubione"></activity>
         <activity android:name=".Kupony" />
         <activity android:name=".Konto" />
         <activity android:name=".Ulubione" />

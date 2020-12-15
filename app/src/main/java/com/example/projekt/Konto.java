@@ -56,7 +56,6 @@ public class Konto extends AppCompatActivity {
         buttonUlubione=findViewById(R.id.buttonUlubione);
         buttonPrzepisy=findViewById(R.id.buttonPrzepisy);
         buttonKupony=findViewById(R.id.buttonKupony);
-        buttonZmianaUsername=findViewById(R.id.buttonChangeUsername);
         buttonZmianaHasla=findViewById(R.id.buttonChangePassword);
         final ImageView imageViewAvatar = findViewById(R.id.imageViewAvatar);
         textViewDisplayName=findViewById(R.id.textViewUsername);
@@ -160,14 +159,6 @@ public class Konto extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Konto.this,ZmianaHasla.class));
-            }
-        });
-        buttonZmianaUsername.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-             //   startActivity(new Intent(Konto.this,ZmianaEmaila.class));
-
             }
         });
 

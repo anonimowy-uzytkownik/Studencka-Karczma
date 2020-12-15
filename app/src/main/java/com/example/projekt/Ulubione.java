@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -20,8 +21,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import static com.example.projekt.MainActivity.EXTRA_MESSAGE;
+
 public class Ulubione extends AppCompatActivity {
     Button buttonPrzepisy,buttonKonto,buttonKupony;
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +110,23 @@ public class Ulubione extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
                 //textViewTytuł.setText(databaseError.getMessage().toString());
             }});
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //  Toast.makeText(MainActivity.this, "Clicked at positon = " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Clicked at id = " + id, Toast.LENGTH_SHORT).show();
+
+
+
+                String nazwaDania = adapter.getItem(position).getNazwa();
+                Log.d("nazwaDania",nazwaDania);
+                Intent intent = new Intent(Ulubione.this, PrzepisSzczegolyUlubione.class);
+                intent.putExtra("nazwaDania", nazwaDania);
+                startActivity(intent);
+
+            }
+        });
 
     }
 
