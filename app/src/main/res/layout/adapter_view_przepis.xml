@@ -36,7 +36,9 @@
         android:gravity="center"
         android:text="Obrazek"
         android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:background="@drawable/imageview_border"
+        android:scaleType="fitXY"/>
 
     <LinearLayout
         android:orientation="vertical"

@@ -29,6 +29,8 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:layout_marginTop="50dp"
+        android:background="@drawable/imageview_border"
+        android:scaleType="fitXY"
         />
 
     <LinearLayout

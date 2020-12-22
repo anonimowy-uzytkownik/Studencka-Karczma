@@ -18,7 +18,6 @@
         android:background="@drawable/edittext_test"
         android:gravity="center"
         android:hint="e-mail"
-        android:inputType="text"
         android:text="t8xfi@wimsg.com"
         android:textColor="#000000" />
 
@@ -31,7 +30,7 @@
         android:background="@drawable/edittext_test"
         android:gravity="center"
         android:hint="haslo"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:text="test123"
         android:textColor="#050505" />
 

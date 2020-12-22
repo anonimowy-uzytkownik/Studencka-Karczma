@@ -37,7 +37,9 @@
         android:text="Obrazek"
         android:layout_marginTop="50dp"
         android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:background="@drawable/imageview_border"
+        android:scaleType="fitXY"/>
 
     <LinearLayout
         android:layout_width="match_parent"

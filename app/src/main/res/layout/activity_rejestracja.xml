@@ -17,7 +17,8 @@
         android:background="@drawable/edittext_test"
         android:gravity="center"
         android:hint="e-mail"
-        android:inputType="text" />
+        android:inputType="text"
+        />
 
     <EditText
         android:id="@+id/haslo"
@@ -28,7 +29,7 @@
         android:background="@drawable/edittext_test"
         android:gravity="center"
         android:hint="haslo"
-        android:inputType="text" />
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/haslo_powtorz"
@@ -39,7 +40,7 @@
         android:background="@drawable/edittext_test"
         android:gravity="center"
         android:hint="powtorz haslo"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:layout_below="@+id/haslo"/>
 
 
