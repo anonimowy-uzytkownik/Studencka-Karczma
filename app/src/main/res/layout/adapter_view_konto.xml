@@ -8,68 +8,59 @@
     android:weightSum="100"
     >
 
-    <!--  <TextView
-          android:id="@+id/textView1"
-          android:layout_width="match_parent"
-          android:layout_height="210dp"
-          android:layout_weight="40"
-          android:gravity="center"
-          android:text="Obrazek"
-          android:textAlignment="center"
-          android:textColor="#FFFFFF"
-          android:background="@drawable/guzik_test"/> !-->
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_weight="40"
-        android:gravity="center"
-        android:text="Obrazek"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/imageview_border"
-        android:scaleType="fitXY"
-        />
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
         android:layout_weight="60"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:background="@drawable/guzik_test">
+
+
 
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="70dp"
+            android:background="@drawable/guzik_test"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="Autor"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"
+            android:textColor="#F1CC68"
+            android:layout_gravity="center"
+            android:textSize="28dp"
+            android:textAllCaps="true"
             />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView1"
+            android:layout_width="350dp"
+            android:layout_height="210dp"
+            android:layout_weight="40"
             android:gravity="center"
-            android:text="Ocena"
+            android:text="Obrazek"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"/>
+            android:background="@drawable/imageview_border"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"/>
 
         <TextView
+            android:layout_marginTop="10dp"
             android:id="@+id/textView4"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="70dp"
+            android:background="@drawable/guzik_test"
             android:gravity="center"
             android:text="Data dodania"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/guzik_test"
-            />
-
+            android:textColor="#F1CC68"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:layout_marginBottom="15dp"/>
 
     </LinearLayout>
 

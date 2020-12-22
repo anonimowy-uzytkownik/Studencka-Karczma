@@ -55,7 +55,6 @@ public class PrzepisListAdapterKonto  extends ArrayAdapter<Przepis> {
 
         ImageView ivObrazek = (ImageView) convertView.findViewById(R.id.imageView1) ;
         TextView tvAutor=(TextView) convertView.findViewById(R.id.textView2);
-        TextView tvOcena=(TextView) convertView.findViewById(R.id.textView3);
         TextView tvDataDodania=(TextView) convertView.findViewById(R.id.textView4);
         Button DodawanieDoUlubionych = convertView.findViewById(R.id.dodawanieDoUlubionych);
         Button OdejmowanieZUlubionych = convertView.findViewById(R.id.odejmowanieZUlubionych);
@@ -75,9 +74,8 @@ public class PrzepisListAdapterKonto  extends ArrayAdapter<Przepis> {
 
 
         //ivObrazek.setImageBitmap(obrazek);
-        tvAutor.setText(autor);
-        tvOcena.setText(ocena);
-        tvDataDodania.setText(dataDodania);
+        tvAutor.setText(nazwaDania);
+        tvDataDodania.setText("Data dodania: "+ dataDodania);
 
         return convertView;
 
