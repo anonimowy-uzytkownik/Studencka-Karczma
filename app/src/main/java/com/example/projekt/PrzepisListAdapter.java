@@ -96,9 +96,8 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
 
 
         //ivObrazek.setImageBitmap(obrazek);
-        tvAutor.setText(autor);
-        tvOcena.setText(ocena);
-        tvDataDodania.setText(dataDodania);
+        tvAutor.setText(nazwaDania);
+        tvDataDodania.setText("Data dodania: "+ dataDodania);
 
         return convertView;
 

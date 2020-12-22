@@ -18,64 +18,73 @@
           android:textColor="#FFFFFF"
           android:background="@drawable/guzik_test"/> !-->
 
-    <Button
-        android:id="@+id/odejmowanieZUlubionych"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:focusable="false"
-        android:layout_marginTop="50dp"
-        android:text="-" />
-
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_weight="40"
-        android:cropToPadding="true"
-        android:gravity="center"
-        android:text="Obrazek"
-        android:layout_marginTop="50dp"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/imageview_border"
-        android:scaleType="fitXY"/>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
         android:layout_weight="60"
-        android:orientation="vertical">
+        android:layout_marginTop="50dp"
+        android:background="@drawable/guzik_test">
+
+
 
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="70dp"
             android:background="@drawable/guzik_test"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="Autor"
-            android:layout_marginTop="50dp"
-            android:textColor="#FFFFFF" />
+            android:textColor="#F1CC68"
+            android:layout_gravity="center"
+            android:textSize="28dp"
+            android:textAllCaps="true"
+            />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@drawable/guzik_test"
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView1"
+            android:layout_width="350dp"
+            android:layout_height="210dp"
+            android:layout_weight="40"
             android:gravity="center"
-            android:text="Ocena"
-            android:textColor="#FFFFFF" />
+            android:text="Obrazek"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/imageview_border"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"/>
 
         <TextView
+            android:layout_marginTop="10dp"
             android:id="@+id/textView4"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="70dp"
             android:background="@drawable/guzik_test"
             android:gravity="center"
             android:text="Data dodania"
-            android:textColor="#FFFFFF" />
+            android:textColor="#F1CC68"
+            android:layout_gravity="center"
+            android:textSize="25dp"/>
 
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/odejmowanieZUlubionych"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:text="Usun z ulubionych"
+            android:focusable="false"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:textSize="25dp"
+            android:background="@drawable/guzik_test2"
+            android:textColor="@color/colorPrimary"
+            />
 
     </LinearLayout>
 
