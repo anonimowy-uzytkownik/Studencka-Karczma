@@ -75,8 +75,6 @@ public class Konto extends AppCompatActivity {
                     if(Integer.parseInt(snapshot.getKey())==user.getEmail().hashCode())
                     {Log.d("UserHash2",snapshot.getKey());
                         textViewDisplayName.setText(snapshot.child("email").getValue().toString());
-
-
                         try {
                             if(snapshot.child("avatar").getValue()==null){return;}
                             String linkToAvatar=snapshot.child("avatar").getValue().toString();
