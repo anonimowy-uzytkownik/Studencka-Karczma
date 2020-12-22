@@ -18,6 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:background="@drawable/background_przepisy"
             android:orientation="horizontal">
 
             <ImageView
@@ -34,35 +35,28 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp">
-
-                    <TextView
-                        android:id="@+id/textViewUsername"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:background="@color/colorAccent"
-                        android:gravity="center"
-                        android:text="email"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18dp" />
-
-                    <Button
-                        android:id="@+id/buttonChangeUsername"
-                        android:layout_width="80dp"
-                        android:layout_height="50dp"
-                        android:text="zmien" />
-                </LinearLayout>
+                    android:layout_height="50dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp">
 
+                    <TextView
+                        android:id="@+id/textViewUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/edittext_test"
+                        android:gravity="center"
+                        android:text="email"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="18dp" />
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/buttonChangePassword"
-                    android:layout_width="230dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:background="@drawable/guzik_test2"
                     android:text="zmien haslo" />
             </LinearLayout>
 
@@ -72,14 +66,15 @@
         <TextView
             android:id="@+id/textMojePrzepisy"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="59dp"
             android:layout_gravity="center"
-            android:background="@drawable/guzik_test2"
+            android:background="@drawable/background_przepisy"
             android:gravity="center"
             android:text="Moje Przepisy"
-            android:textColor="#000000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimary"
             android:textSize="36sp"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/listView1"
