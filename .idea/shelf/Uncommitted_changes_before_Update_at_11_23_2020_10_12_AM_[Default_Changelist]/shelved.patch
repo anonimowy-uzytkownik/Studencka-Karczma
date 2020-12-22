@@ -1,0 +1,62 @@
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/llinear1\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"50dp\"\r\n            android:orientation=\"horizontal\"\r\n            android:background=\"#000000\"\r\n            >\r\n\r\n\r\n            <Button\r\n                android:id=\"@+id/buttonDodaniePrzepisu\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"left\"\r\n                android:layout_weight=\"80\"\r\n                android:background=\"@drawable/guzik_test2\"\r\n                android:text=\"dodaj przepis\"\r\n                android:textSize=\"14sp\" />\r\n\r\n            <Button\r\n                android:id=\"@+id/button\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"left\"\r\n                android:layout_weight=\"80\"\r\n                android:text=\"button\"\r\n                android:background=\"@drawable/guzik_test2\"\r\n                />\r\n\r\n\r\n            <Button\r\n                android:id=\"@+id/buttonPlayer\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"left\"\r\n                android:layout_weight=\"80\"\r\n                android:background=\"@drawable/guzik_test2\"\r\n                android:text=\"wycisz\"\r\n                android:onClick=\"playIT\"/>\r\n\r\n            <Button\r\n                android:id=\"@+id/button3\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_gravity=\"left\"\r\n                android:layout_weight=\"80\"\r\n                android:text=\"Button\"\r\n                android:background=\"@drawable/guzik_test2\"\r\n                />\r\n\r\n\r\n\r\n        </LinearLayout>\r\n\r\n        <ListView\r\n            android:id=\"@+id/listView1\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"600dp\"\r\n            android:layout_weight=\"60\"\r\n            android:background=\"@drawable/gotowe\"></ListView>\r\n\r\n\r\n\r\n\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"60dp\"\r\n            android:orientation=\"horizontal\"\r\n            android:background=\"#000000\">\r\n\r\n\r\n            <Button\r\n                android:id=\"@+id/buttonPrzepisy\"\r\n                android:layout_width=\"110dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:background=\"@drawable/homeprzepisy\" />\r\n\r\n\r\n            <Button\r\n                android:id=\"@+id/buttonUlubione\"\r\n                android:layout_width=\"109dp\"\r\n                android:layout_height=\"match_parent\"\r\n                android:layout_weight=\"1\"\r\n                android:background=\"@drawable/javanew\" />\r\n\r\n            <Button\r\n                android:id=\"@+id/buttonKonto\"\r\n                android:layout_width=\"110dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:background=\"@drawable/konto\" />\r\n\r\n            <Button\r\n                android:id=\"@+id/buttonKupony\"\r\n                android:layout_width=\"110dp\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:background=\"@drawable/kupony\" />\r\n\r\n        </LinearLayout>\r\n\r\n    </LinearLayout>\r\n\r\n\r\n</RelativeLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(revision 2a7d2d083578d5a59aee50f64e0fb9268d6be36a)
++++ app/src/main/res/layout/activity_main.xml	(date 1605617158140)
+@@ -88,29 +88,38 @@
+                 android:layout_width="110dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+-                android:background="@drawable/homeprzepisy" />
++                android:background="@drawable/homeprzepisy_test"
++                />
++            <!--   android:background="@drawable/homeprzepisy" -->
++
+ 
+ 
+-            <Button
+-                android:id="@+id/buttonUlubione"
+-                android:layout_width="109dp"
+-                android:layout_height="match_parent"
+-                android:layout_weight="1"
+-                android:background="@drawable/javanew" />
++           <Button
++               android:id="@+id/buttonUlubione"
++               android:layout_width="109dp"
++               android:layout_height="match_parent"
++               android:layout_weight="1"
++               android:background="@drawable/homeprzepisy_test"/>
++           <!--  android:background="@drawable/javanew" -->
++
+ 
+             <Button
+                 android:id="@+id/buttonKonto"
+                 android:layout_width="110dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+-                android:background="@drawable/konto" />
++                android:background="@drawable/homeprzepisy_test"/>
++            <!--    android:background="@drawable/konto" -->
++
+ 
+-            <Button
+-                android:id="@+id/buttonKupony"
+-                android:layout_width="110dp"
+-                android:layout_height="wrap_content"
+-                android:layout_weight="1"
+-                android:background="@drawable/kupony" />
++           <Button
++               android:id="@+id/buttonKupony"
++               android:layout_width="110dp"
++               android:layout_height="wrap_content"
++               android:layout_weight="1"
++               android:background="@drawable/homeprzepisy_test"/>
++           <!--    android:background="@drawable/kupony" -->
++
+ 
+         </LinearLayout>
+ 

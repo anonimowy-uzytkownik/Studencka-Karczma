@@ -28,7 +28,7 @@ public class KuponListAdapter  extends ArrayAdapter<Kupon> {
 
     private Context mContext;
     int mResource;
-
+    int a;
     public KuponListAdapter(android.content.Context context, int resource, ArrayList<Kupon> objects) {
         super(context, resource, objects);
         this.mContext=context;
