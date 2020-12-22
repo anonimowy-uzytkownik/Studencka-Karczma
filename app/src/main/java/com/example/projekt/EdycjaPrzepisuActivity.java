@@ -38,7 +38,6 @@ import java.util.Calendar;
 
 public class EdycjaPrzepisuActivity extends AppCompatActivity {
 
-    ImageView IVobrazek;
     Button buttonEdytuj;
     TextView TVnazwa,TVskladniki,TVsposobPrzygotowania,TVocena,TVautor;
     static  String obrazekURL=null;
@@ -54,7 +53,6 @@ public class EdycjaPrzepisuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edycja);
 
-        IVobrazek=findViewById(R.id.obrazek);
         TVnazwa=findViewById(R.id.nazwa);
         TVskladniki=findViewById(R.id.skladniki);
         TVsposobPrzygotowania=findViewById(R.id.sposobPrzygotowania);
@@ -81,14 +79,6 @@ public class EdycjaPrzepisuActivity extends AppCompatActivity {
                     String sposobPrzygotowania = String.valueOf(dataSnapshot.child("sposobPrzygotowania").getValue());
 
 
-                    try {
-                        URL url = new URL(obrazek);
-                        Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                        IVobrazek.setImageBitmap(image);
-                    }
-
-                    catch(IOException e) {Log.e("image error",e.getMessage());}
-
 
                     TVnazwa.setText(nazwa);
                     TVskladniki.setText(skladniki);
@@ -112,7 +102,6 @@ public class EdycjaPrzepisuActivity extends AppCompatActivity {
 
                 DatabaseReference edytowanyPrzepis = FirebaseDatabase.getInstance().getReference().child("Przepisy").child(message);
 
-                IVobrazek=findViewById(R.id.obrazek);
                 TVnazwa=findViewById(R.id.nazwa);
                 TVskladniki=findViewById(R.id.skladniki);
                 TVsposobPrzygotowania=findViewById(R.id.sposobPrzygotowania);
@@ -139,17 +128,6 @@ public class EdycjaPrzepisuActivity extends AppCompatActivity {
             }
         });
 
-        IVobrazek.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-                final int ACTIVITY_SELECT_IMAGE = 1234;
-                startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
-
-            }
-        });
 
 
 
