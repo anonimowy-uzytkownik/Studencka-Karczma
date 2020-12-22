@@ -89,6 +89,8 @@ public class Pop extends Activity {
         usersRef.child(nazwa.getText().toString()).setValue(new Przepis(obrazek, nickname,"5",dzisiejszaData.toString(),skladniki.getText().toString(),sposobPrzygotowania.getText().toString(),nazwa.getText().toString()));
         }
 
+        finish();
+
     }
 
 

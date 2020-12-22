@@ -138,11 +138,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         przepisList.clear();
-        obrazek.addListenerForSingleValueEvent(new ValueEventListener() {
+        obrazek.addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(DataSnapshot dataSnapshot) {
+               przepisList.clear();
                for (DataSnapshot snapshot : dataSnapshot.getChildren())
                {
+
 
                    Log.i("dasda", "String");
 
@@ -167,6 +169,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,Pop.class));
+
+
             }
         });
 

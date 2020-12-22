@@ -77,9 +77,10 @@ public class Ulubione extends AppCompatActivity {
         final Query obrazek = FirebaseDatabase.getInstance().getReference().child("Przepisy");
 
         przepisList.clear();
-        obrazek.addListenerForSingleValueEvent(new ValueEventListener() {
+        obrazek.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                przepisList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
 
