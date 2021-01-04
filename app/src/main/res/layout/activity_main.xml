@@ -25,21 +25,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:layout_weight="80"
+                android:layout_weight="50"
                 android:background="@drawable/guzik_test2"
                 android:text="dodaj przepis"
                 android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="80"
-                android:text="button"
-                android:background="@drawable/guzik_test2"
-                />
-
 
             <Button
                 android:id="@+id/buttonPlayer"
@@ -48,7 +37,7 @@
                 android:layout_gravity="left"
                 android:layout_weight="80"
                 android:background="@drawable/guzik_test2"
-                android:text="wycisz"
+                android:text="wł/wył ♫"
                 android:onClick="playIT"/>
 
             <Button

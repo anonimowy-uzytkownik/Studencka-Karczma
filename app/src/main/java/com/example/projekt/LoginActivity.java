@@ -70,9 +70,9 @@ public class LoginActivity extends AppCompatActivity {
                 String email = etEmail.getText().toString().trim();
                 String haslo = etHaslo.getText().toString().trim();
 
-                //mySong= MediaPlayer.create(LoginActivity.this,R.raw.maintheme);
-                //mySong.start();
-                //mySong.setLooping(true);
+                mySong= MediaPlayer.create(LoginActivity.this,R.raw.maintheme);
+                mySong.start();
+                mySong.setLooping(true);
 
 
                 mFirebaseAuth.signInWithEmailAndPassword(email, haslo).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

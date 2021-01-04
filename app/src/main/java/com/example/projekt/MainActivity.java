@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         buttonUlubione=findViewById(R.id.buttonUlubione);
         buttonKonto=findViewById(R.id.buttonKonto);
         buttonKupony=findViewById(R.id.buttonKupony);
-        buttonCzyszczenie=findViewById(R.id.button);
+       // buttonCzyszczenie=findViewById(R.id.button);
         buttonDodaniePrzepisu=findViewById(R.id.buttonDodaniePrzepisu);
         buttonPlayer=findViewById(R.id.buttonPlayer);
         mStorageRef = FirebaseStorage.getInstance().getReference();
