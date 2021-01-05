@@ -36,7 +36,6 @@ public class PrzepisSzczegoly extends AppCompatActivity {
         TVnazwa=findViewById(R.id.nazwa);
         TVskladniki=findViewById(R.id.skladniki);
         TVsposobPrzygotowania=findViewById(R.id.sposobPrzygotowania);
-        TVocena=findViewById(R.id.ocena);
         TVautor=findViewById(R.id.autor);
 
 
@@ -76,7 +75,6 @@ public class PrzepisSzczegoly extends AppCompatActivity {
                     TVnazwa.setText(nazwa);
                     TVskladniki.setText(skladniki);
                     TVsposobPrzygotowania.setText(sposobPrzygotowania);
-                    TVocena.setText(ocena);
                     TVautor.setText(autor);
 
                     Log.d("nazwa w przepisSzcz",nazwa);

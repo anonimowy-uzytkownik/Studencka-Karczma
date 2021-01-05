@@ -9,10 +9,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -55,15 +58,13 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
         final String dataDodania = getItem(position).getDataDodania();
         final String nazwaDania = getItem(position).getNazwa();
 
-        //Przepis przepis = new Przepis(obrazek, autor, ocena, dataDodania);
-
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView=inflater.inflate(mResource,parent,false);
 
         ImageView ivObrazek = (ImageView) convertView.findViewById(R.id.imageView1) ;
         TextView tvAutor=(TextView) convertView.findViewById(R.id.textView2);
         TextView tvDataDodania=(TextView) convertView.findViewById(R.id.textView4);
-        Button DodawanieDoUlubionych = convertView.findViewById(R.id.dodawanieDoUlubionych);
+        final Button DodawanieDoUlubionych = convertView.findViewById(R.id.dodawanieDoUlubionych);
         Button OdejmowanieZUlubionych = convertView.findViewById(R.id.odejmowanieZUlubionych);
 
 //        Log.d("obrazek2", obrazek);
@@ -88,6 +89,9 @@ public class PrzepisListAdapter  extends ArrayAdapter<Przepis> {
                 final String nickname =  user.getEmail();
                 DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Przepisy").child(nazwaDania).child("ulubione");
                 usersRef.child(String.valueOf(nickname.hashCode())).setValue(String.valueOf(nickname.hashCode()));
+
+                Toast toast = Toast.makeText(getContext(),"przepis dodany do ulubionych!",Toast.LENGTH_SHORT);
+                toast.show();
 
             }
         });

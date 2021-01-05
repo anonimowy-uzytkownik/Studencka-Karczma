@@ -35,7 +35,6 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public final String [] tablica={"a","a","a","a"};
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     private StorageReference mStorageRef;
     Button buttonUlubione,buttonKonto,buttonKupony,buttonCzyszczenie,buttonDodaniePrzepisu;
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     TextView textViewSkładniki, textViewOpis,textViewTytuł, textViewPrzygotowanie, textViewPorcja, buttonPlayer;
-    //String[] tablica={"a","a","a","a"};
     static String obrazekPrzepisuPath = null;
     MediaPlayer mySong;
     @Override

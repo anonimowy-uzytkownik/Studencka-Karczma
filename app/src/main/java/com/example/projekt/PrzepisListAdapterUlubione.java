@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -82,6 +83,9 @@ public class PrzepisListAdapterUlubione  extends ArrayAdapter<Przepis> {
                 final String nickname =  user.getEmail();
                 DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Przepisy").child(nazwaDania).child("ulubione");
                 usersRef.child(String.valueOf(nickname.hashCode())).setValue(null);
+
+                Toast toast = Toast.makeText(getContext(),"przepis usuniety z ulubionych!",Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
 

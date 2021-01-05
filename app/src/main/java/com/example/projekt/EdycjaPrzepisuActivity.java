@@ -105,7 +105,6 @@ public class EdycjaPrzepisuActivity extends AppCompatActivity {
                 TVnazwa=findViewById(R.id.nazwa);
                 TVskladniki=findViewById(R.id.skladniki);
                 TVsposobPrzygotowania=findViewById(R.id.sposobPrzygotowania);
-                TVocena=findViewById(R.id.ocena);
                 TVautor=findViewById(R.id.autor);
                 buttonEdytuj=findViewById(R.id.buttonEdytuj);
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
