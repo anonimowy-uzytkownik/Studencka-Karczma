@@ -175,6 +175,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playIT(View view) {
+
+        /*
         if(mySong.isPlaying()){
             mySong.pause();
         }
@@ -182,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
         {
             mySong.start();
         }
-
+            */
 
     }
 
